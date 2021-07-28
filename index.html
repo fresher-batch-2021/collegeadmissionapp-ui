@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Sample Webpage </h1>
-    <p>To create a Project.....</p>
+    <div>
+        <h1>Student-Details</h1>
+    </div>
+    <form>
+        <div>
+            <label>Student Name :</label>
+            <input type="text" id="ename" placeholder="Your-Name">
+        </div>
+        <br>
+        <div>
+            <label>Student ID :</label>
+            <input type="number" id="enum" value="enum" placeholder="EmpID">
+        </div>
+        <br>
+        <div>
+            <label>DOB :</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+        <br>
+        <div>
+            <label>Gender :</label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+        </div>
+        <br>
+        <div>
+            <label>Branch :</label>
+            <select name="desig" id="desig">
+                <option value="Frontend-Developer">Frontend-Developer</option>
+                <option value="Backend-Developer">Backend-Developer</option>
+                <option value="Fullstack-Developer">Fullstack-Developer</option>
+            </select>
+        </div>
+        <br>
+        <div>
+                <button type="button">Submit!</button>
+        </div>
+    </form>
+
 </body>
+
 </html>
