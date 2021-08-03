@@ -1,0 +1,60 @@
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(image.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.name {
+    width: 940px;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-53%, -53%);
+    box-sizing: border-box;
+    padding: 50px 30px;
+    font-family: sans-serif;
+    border-radius: 30px;
+}
+
+.submit1 {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    padding: 6px;
+    color: black;
+}
+
+.submit1:hover {
+    background: aquamarine;
+    color: black;
+    cursor: pointer;
+}
+
+
+.submit2 {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    padding: 6px;
+    color: black;
+}
+
+.submit2:hover {
+    background: aquamarine;
+    color: black;
+    cursor: pointer;
+}

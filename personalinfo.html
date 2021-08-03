@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal-Info</title>
+    <link rel="stylesheet" href="Assets/css/personal.css">
+
+
+</head>
+
+<body>
+    <h1>Personal-Information</h1>
+    <div class="name">
+
+        <form action="academic.html">
+            <table align="center" colspan="2" cellpadding="10">
+                <tr>
+                    <td>
+                        <label>First Name *</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="FirstName" required>
+                    </td>
+                    <td>
+                        <label>Last Name *</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Lastname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Father Name *</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Fathername" required>
+                    </td>
+                    <td>
+                        <label>Mother Name *</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Mothername" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Date Of Birth *</label>
+                    </td>
+                    <td>
+                        <input type="date" id="name" placeholder="DOB" required>
+                    </td>
+                    <td>
+                        Gender *
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" required>Male
+                        <input type="radio" name="gender" required>Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Communicatio-Address</label>
+                    </td>
+                    <td>
+                        <textarea rows="6" cols="25" placeholder="Address"></textarea>
+                    </td>
+                    <td>
+                        <label>State *</label>
+                    </td>
+                    <td>
+                        <input type="radio" onclick="javascript:yesnoCheck();" name="State" required>TamilNadu
+                        <input type="radio" onclick="javascript:yesnoCheck();" name="State" required>Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Same as Communication address</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="name" value="Same as Communication address">
+                    </td>
+                    <td>
+                        <label>District *</label>
+                    </td>
+                    <td>
+                        <select name="District" id="name">
+                            <option>Chennai</option>
+                            <option>Coimbatore</option>
+                            <option>Madurai</option>
+                            <option>Salem</option>
+                            <option>Trichy</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label>Permanent Address *</label>
+                    </td>
+                    <td>
+                        <textarea rows="6" cols="25" placeholder="Address"></textarea>
+                    </td>
+                    <td>
+                        <label>Pincode *</label>
+                    </td>
+                    <td>
+                        <select name="Pincode" id="name">
+                            <option>600005</option>
+                            <option>636005</option>
+                            <option>635005</option>
+                            <option>600405</option>
+                            <option>634006</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Religion *</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="Relogion">Hindu
+                        <input type="radio" name="Relogion">Christian
+                        <input type="radio" name="Relogion">Muslim
+                    </td>
+                    <td>
+                        <label>Community *</label>
+                    </td>
+                    <td>
+                        <select name="Community" id="name">
+                            <option>BC</option>
+                            <option>MBC</option>
+                            <option>ST</option>
+                            <option>SC</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label>Aadhar Number *</label>
+                    </td>
+                    <td>
+                        <input type="number" id="name" placeholder="Enter aadhar number">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="2">
+                        <input class="submit1" type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="submit2" type="submit" id="reset" value="Save&Continue">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(image.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+        }
+
+
+        .academic {
+            width: 550px;
+            height: 630px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            top: 55%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-55%, -55%);
+            box-sizing: border-box;
+            padding: 50px 30px;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0 0 20px;
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+        .academic input[type="submit"],
+        input[type="reset"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: aqua;
+            color: blue;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+
+        .academic input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            cursor: pointer;
+            background: greenyellow;
+            color: #000;
+        }
+
+        a {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="academic">
+        <form>
+            <h1>Academic Information</h1>
+            <table cellpadding="10">
+                <tr>
+                    <td>
+                        <label>Qualifying Examination</label>
+                    </td>
+                    <td>
+                        <select name="exam">
+                            <option>HSC</option>
+                            <option>Diplomo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Name Of Board</label>
+                    </td>
+                    <td>
+                        <select name="board">
+                            <option>State Board</option>
+                            <option>CBSE</option>
+                            <option>Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>HSC Reg-No</label>
+                    </td>
+                    <td>
+                        <input type="tel" id="name" placeholder="Enter RegNo">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Qualifying Year</label>
+                    </td>
+                    <td>
+                        <input type="month" id="name" placeholder="YOP">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>HSC Group Code</label>
+                    </td>
+                    <td>
+                        <select name="group">
+                            <option>Maths Biology</option>
+                            <option>Maths Computer</option>
+                            <option>Vocational</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Medium of Instructions</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="name" name="Medium">Tamil
+                        <input type="radio" id="name" name="Medium">English
+                        <input type="radio" id="name" name="Medium">Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>If others Specify</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Enter Medium">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>HSC Maximum(Total)Marks</label>
+                    </td>
+                    <td>
+                        <input type="number" id="name" placeholder="Enter Marks">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>HSC Obtained(Total)Marks</label>
+                    </td>
+                    <td>
+                        <input type="number" id="name" placeholder="Enter Marks">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>SSLC Maximum(Total)Marks</label>
+                    </td>
+                    <td>
+                        <input type="number" id="name" placeholder="Enter Marks">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>HSC Obtained(Total)Marks</label>
+                    </td>
+                    <td>
+                        <input type="number" id="name" placeholder="Enter Marks">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <input class="submit1" type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="submit2" type="submit" id="reset" value="Save & Continue">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

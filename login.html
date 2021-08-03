@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function login() {
+            event.preventDefault();
+            const userName = document.querySelector("#userName").value;
+            if (userName == "" || userName == null || userName.trim == "" || userName == undefined) {
+                alert("Invalid Username");
+                return false;
+            }
+            const password = document.querySelector("#password").value;
+            if (password == "" || password == null || password.trim == "" || password == undefined) {
+                alert("Invalid Password");
+                return false;
+            }
+            let userObj = {
+
+                "User_Name": userName,
+                "Password": password
+            };
+            console.log(userObj);
+
+            alert("Registration Successful");
+            window.location.href = "personalinfo.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login_box">
+        <img src="user.png" class="user">
+        <h1>Login Here</h1>
+        <form action="personalinfo.html" onsubmit="login()">
+            <p>UserName</p>
+            <input type="text" id="userName" placeholder="Enter_Username">
+            <p>Password</p>
+            <input type="password" id="password" placeholder="Enter_Password">
+            <input type="submit" name="submit" value="Login">
+            <a href="#">Forgot Password ?</a>
+            <br>
+            <br>
+            <label>New Registration</label>
+            <a href="reg.html">Click Here</a>
+        </form>
+
+    </div>
+</body>
+
+</html>

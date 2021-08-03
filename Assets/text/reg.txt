@@ -1,0 +1,1 @@
+{Name: "Manikandan", Contact NO: "9487105572", DOB: "1996-06-10", Email: "mani@gmail.com", Password1: "12345678"}

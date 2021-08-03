@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    font-family: Roboto,sans-serif;
+    background-color:white;    
+    margin:0px;
+ 
+}
+.navbar {
+    background-color:gray; 
+    text-align: center;
+}
+.navbar input[type="submit"]
+        {
+            text-align: right;
+            border: none;
+            outline: none;
+            height: 40px;
+            background: aqua;
+            color: blue;
+            font-size: 30px;
+            border-radius: 30px;
+            margin-left:90%; 
+        }
+        h3{
+            text-align: left;
+        }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    <link rel="stylesheet" href="Assets/css/reg.css">
+    <script src="Assets/js/reg.js"> 
+
+    </script>
+</head>
+
+<body>
+    <div class="name">
+        <img src="user.png" class="user">
+        <h1>Registration Form</h1>
+        <form action="login.html" onsubmit="register()">
+            <table align="center" cellpadding="10">
+                <tr>
+                    <td>
+                        <label>Candidate Name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Candidate Name">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>Mobile Number</label>
+                    </td>
+
+                    <td>
+                        <input type="tel" id="contact" placeholder="Mobile number" pattern="[0-9]{10}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date of Birth
+                    </td>
+                    <td>
+                        <input type="date" id="dob" name="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email-ID</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" placeholder="Email-ID">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>UserName</label>
+                    </td>
+                    <td>
+                        <input type="text" id="user" placeholder="Username">
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="pass1" placeholder="Password" minlength="8">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Confirm Password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="pass2" placeholder="Password" minlength="8">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="reset" id="reset" value="Reset">&nbsp;&nbsp;&nbsp;
+                        <input type="Submit" id="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>
