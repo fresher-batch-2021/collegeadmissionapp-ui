@@ -71,8 +71,11 @@
                         <label>State *</label>
                     </td>
                     <td>
-                        <input type="radio" id="state" name="State" required>TamilNadu
-                        <input type="radio" id="state" name="State" required>Others
+                        <input type="radio" onclick="paid();" name="state" id="state"></input> Tamil Nadu 
+                        <input type="radio" onclick="paid();" name="yesno" id="state"></input>Others
+
+                        <div style="visibility:hidden" id="other_state"></div>
+                        Amount <input type="text" id='yes' name='yes' placeholder="Enter Name of State">
                     </td>
                 </tr>
                 <tr>
@@ -81,18 +84,6 @@
                     </td>
                     <td>
                         <input type="checkbox" id="dob" value="Same as Communication address">
-                    </td>
-                    <td>
-                        <label>District *</label>
-                    </td>
-                    <td>
-                        <select name="District" id="district">
-                            <option>Chennai</option>
-                            <option>Coimbatore</option>
-                            <option>Madurai</option>
-                            <option>Salem</option>
-                            <option>Trichy</option>
-                        </select>
                     </td>
 
                 </tr>
@@ -198,9 +189,14 @@
             console.log(userObj);
             alert("Registration Successful");
             window.location.href = "academic.html";
-
-
         }
+        function paid() {
+            if (document.getElementById('yesCheck').checked) {
+                document.getElementById('ifPaid').style.visibility = 'visible';
+            }
+            else {
+                document.getElementById('ifPaid').style.visibility = 'hidden';
+            }
     </script>
 </body>
 

@@ -1,15 +1,11 @@
-<link rel="stylesheet" href="Assets/css/header.css">
-
-<body>
-
-        <div class="menubar">
+ <div class="menubar">
                 <h1>Krishna Group of Institutions</h1>
                 <ul class="tag">
                         <li>
                                 College Code :1234
                         </li>
                         <li>
-                                <a  href="index.html"> Home</a>
+                                <a c href="homepage.html"> Home</a>
                         </li>
                         <li>
                                 <a href="profile.html"> About Us</a>
@@ -27,4 +23,33 @@
                 </ul>
 
         </div>
-</body>
+
+
+.menubar {
+    background-color:rgb(0,100,0); 
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    color: blue;
+    background-color: gold;
+}
+.menubar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menubar ul li{
+    width: 180px;
+    margin: 15px;
+    padding: 10px;
+}
+.menubar ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menubar ul li:hover{
+    background: #2bab0d;
+    border-radius: 3px;
+
+}

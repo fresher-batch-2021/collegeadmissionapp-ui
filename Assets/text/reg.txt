@@ -1,3 +1,7 @@
 {Name: "Manikandan", Contact NO: "9487105572", DOB: "1996-06-10", Email: "mani@gmail.com", Password1: "12345678"}
 
-{Name: "Manikandan", Contact NO: "9487105572", DOB: "1996-06-10", Email: "mani@gmail.com", UserName: "Moudhisaran",Password1: "Manidev17*"}
+{Name: "Manikandan", Contact NO: 
+"9487105572", DOB: "1996-06-10", Email: "mani@gmail.com", UserName: "Moudhisaran",Password1: "Manidev17*"}
+
+ <input type="radio" onclick="state();" id="state" name="State" required>TamilNadu
+                        <input type="radio" onclick="state();" id="others" name="State" required>Others
