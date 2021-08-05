@@ -39,7 +39,7 @@ function register() {
         alert("Invaid Password");
         return false;
     }
-    //console.log("Name :" + name + "-" + mobile + "-" + dob + "-" + email);
+   
     let userObj = {
 
         "Name": name,
