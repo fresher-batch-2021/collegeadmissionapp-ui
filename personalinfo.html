@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Personal-Info</title>
     <link rel="stylesheet" href="Assets/css/personal.css">
-
-
+    <script src="Assets/js/personal.js"> </script>
 </head>
 
 <body>
     <h1>Personal-Information</h1>
     <div class="name">
 
-        <form action="academic.html" onsubmit=" personal() ">
+        <form action="academic.html" onsubmit="personal()">
             <table colspan="2" cellpadding="10">
                 <tr>
                     <td>
@@ -65,25 +64,31 @@
                         <label>Communicatio-Address</label>
                     </td>
                     <td>
-                        <textarea rows="6" cols="25" id="addr_1" placeholder="Address"></textarea>
+                        <textarea rows="4" cols="25" id="addr_1" placeholder="Address"></textarea>
                     </td>
                     <td>
                         <label>State *</label>
                     </td>
                     <td>
-                        <input type="radio" onclick="paid();" name="state" id="state"></input> Tamil Nadu 
-                        <input type="radio" onclick="paid();" name="yesno" id="state"></input>Others
-
-                        <div style="visibility:hidden" id="other_state"></div>
-                        Amount <input type="text" id='yes' name='yes' placeholder="Enter Name of State">
+                        <input type="radio" name="state" id="state" onclick="show1()" ; />
+                        Tamil Nadu
+                        <input type="radio" name="state" id="state" onclick="show2()" ; />
+                        Others
                     </td>
-                </tr>
                 <tr>
                     <td>
                         <label>Same as Communication address</label>
                     </td>
                     <td>
-                        <input type="checkbox" id="dob" value="Same as Communication address">
+                        <input type="checkbox" id="check" value="Same as Communication address">
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="div1" class="hide">
+                            <input type="text" placeholder="Enter State Name">
+                        </div>
                     </td>
 
                 </tr>
@@ -92,18 +97,18 @@
                         <label>Permanent Address *</label>
                     </td>
                     <td>
-                        <textarea rows="6" cols="25" id="addr_2" placeholder="Address"></textarea>
+                        <textarea rows="4" cols="25" id="addr_2" placeholder="Address"></textarea>
                     </td>
                     <td>
                         <label>Pincode *</label>
                     </td>
                     <td>
-                        <select name="Pincode" id="pincode">
-                            <option>600005</option>
-                            <option>636005</option>
-                            <option>635005</option>
-                            <option>600405</option>
-                            <option>634006</option>
+                        <select name="District" id="district">
+                            <option>Chennai</option>
+                            <option>Salem</option>
+                            <option>Madurai</option>
+                            <option>Coimbatore</option>
+                            <option>Trichy</option>
                         </select>
                     </td>
 
@@ -114,20 +119,24 @@
                         <label>Religion *</label>
                     </td>
                     <td>
-                        <input type="radio" id="religion" name="Relogion">Hindu
-                        <input type="radio" id="religion" name="Relogion">Christian
-                        <input type="radio" id="religion" name="Relogion">Muslim
+                        <input type="radio" id="religion" onclick="show4()" name="Relogion">Hindu
+                        <input type="radio" id="religion" onclick="show3()" name="Relogion">Christian
+                        <input type="radio" id="religion" onclick="show3()" name="Relogion">Muslim
                     </td>
                     <td>
-                        <label>Community *</label>
+
                     </td>
                     <td>
-                        <select name="Community" id="community">
-                            <option>BC</option>
-                            <option>MBC</option>
-                            <option>ST</option>
-                            <option>SC</option>
-                        </select>
+                        <div id="div2" class="hide">
+                            <select name="Community" id="community">
+                                <option>Choose Community</option>
+                                <option>BC</option>
+                                <option>MBC</option>
+                                <option>ST</option>
+                                <option>SC</option>
+                            </select>
+                        </div>
+
                     </td>
                 </tr>
                 <tr>
@@ -152,52 +161,7 @@
         </form>
 
     </div>
-    <script>
-        function personal() {
-            event.preventDefault();
-            const f_name = document.querySelector("#f_name").value;
-            const l_name = document.querySelector("#l_name").value;
-            const fatherName = document.querySelector("#father_name").value;
-            const motherName = document.querySelector("#mother_name").value;
-            const dob = document.querySelector("#dob").value;
-            const gender = document.querySelector("#gender").value;
-            const state = document.querySelector("#state").value;
-            const addr_1 = document.querySelector("#addr_1").value;
-            const addr_2 = document.querySelector("#addr_2").value;
-            const district = document.querySelector("#district").value;
-            const pincode = document.querySelector("#pincode").value;
-            const religion = document.querySelector("#religion").value;
-            const community = document.querySelector("#community").value;
-            const aadhar = document.querySelector("#dob").value;
 
-            let userObj = {
-                "FirstName": f_name,
-                "LastName": l_name,
-                "FatherName": fatherName,
-                "MotherName": motherName,
-                "DOB": dob,
-                "Gender": gender,
-                "State": state,
-                "Communication Address": addr_1,
-                "Permanent Address": addr_2,
-                "District": district,
-                "Pincode": pincode,
-                "Religion": religion,
-                "Community": community,
-                "AadharNumber": aadhar
-            };
-            console.log(userObj);
-            alert("Registration Successful");
-            window.location.href = "academic.html";
-        }
-        function paid() {
-            if (document.getElementById('yesCheck').checked) {
-                document.getElementById('ifPaid').style.visibility = 'visible';
-            }
-            else {
-                document.getElementById('ifPaid').style.visibility = 'hidden';
-            }
-    </script>
 </body>
 
 </html>

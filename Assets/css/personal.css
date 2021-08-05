@@ -58,3 +58,6 @@ body {
     color: black;
     cursor: pointer;
 }
+.hide {
+    display: none;
+}

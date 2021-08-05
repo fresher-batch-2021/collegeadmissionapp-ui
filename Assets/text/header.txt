@@ -53,3 +53,22 @@ h1 {
     border-radius: 3px;
 
 }
+
+////////////////////////////////////
+<td>
+                        <label>State *</label>
+                    </td>
+                    <td>
+                        <input type="radio" onclick="paid();" name="state" id="state"></input> Tamil Nadu
+                        <input type="radio" onclick="paid();" name="state" id="others"></input>Others
+                    </td>
+                <tr>
+                    <td>
+                        <label>Same as Communication address</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="check" value="Same as Communication address">
+                    </td>
+
+
+ If Others <input type="text" id="otherState" placeholder="Enter State Name">
