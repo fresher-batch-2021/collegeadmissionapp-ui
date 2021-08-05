@@ -1,6 +1,5 @@
 function register() {
     event.preventDefault();
-    // Get Form Values
     const name = document.querySelector("#name").value;
     if (name == "" || name == null || name.trim == "" || name == undefined) {
         alert("Invalid Name");
@@ -19,6 +18,11 @@ function register() {
     const email = document.querySelector("#email").value;
     if (email == "" || email == null || email == undefined) {
         alert("Invalid Email Address");
+        return false;
+    }
+    const userName = document.querySelector("#user").value;
+    if (userName == "" || userName == null || userName == undefined) {
+        alert("Invalid UserName");
         return false;
     }
     const password1 = document.querySelector("#pass1").value;
@@ -42,10 +46,10 @@ function register() {
         "Contact NO": mobile,
         "DOB": dob,
         "Email": email,
-        "Password1": password1,
+        "UserName": userName,
+        "Password1": password1
     };
     console.log(userObj);
-
     alert("Registration Successful");
     window.location.href = "login.html";
 }

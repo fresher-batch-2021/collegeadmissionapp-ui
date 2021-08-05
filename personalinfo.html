@@ -15,20 +15,20 @@
     <h1>Personal-Information</h1>
     <div class="name">
 
-        <form action="academic.html">
-            <table align="center" colspan="2" cellpadding="10">
+        <form action="academic.html" onsubmit=" personal() ">
+            <table colspan="2" cellpadding="10">
                 <tr>
                     <td>
                         <label>First Name *</label>
                     </td>
                     <td>
-                        <input type="text" id="name" placeholder="FirstName" required>
+                        <input type="text" id="f_name" placeholder="FirstName" required>
                     </td>
                     <td>
                         <label>Last Name *</label>
                     </td>
                     <td>
-                        <input type="text" id="name" placeholder="Lastname" required>
+                        <input type="text" id="l_name" placeholder="Lastname" required>
                     </td>
                 </tr>
                 <tr>
@@ -36,13 +36,13 @@
                         <label>Father Name *</label>
                     </td>
                     <td>
-                        <input type="text" id="name" placeholder="Fathername" required>
+                        <input type="text" id="father_name" placeholder="Fathername" required>
                     </td>
                     <td>
                         <label>Mother Name *</label>
                     </td>
                     <td>
-                        <input type="text" id="name" placeholder="Mothername" required>
+                        <input type="text" id="mother_name" placeholder="Mothername" required>
                     </td>
                 </tr>
                 <tr>
@@ -50,14 +50,14 @@
                         <label>Date Of Birth *</label>
                     </td>
                     <td>
-                        <input type="date" id="name" placeholder="DOB" required>
+                        <input type="date" id="dob" placeholder="DOB" required>
                     </td>
                     <td>
                         Gender *
                     </td>
                     <td>
-                        <input type="radio" name="gender" required>Male
-                        <input type="radio" name="gender" required>Female
+                        <input type="radio" id="gender" name="gender" required>Male
+                        <input type="radio" id="gender" name="gender" required>Female
                     </td>
                 </tr>
                 <tr>
@@ -65,14 +65,14 @@
                         <label>Communicatio-Address</label>
                     </td>
                     <td>
-                        <textarea rows="6" cols="25" placeholder="Address"></textarea>
+                        <textarea rows="6" cols="25" id="addr_1" placeholder="Address"></textarea>
                     </td>
                     <td>
                         <label>State *</label>
                     </td>
                     <td>
-                        <input type="radio" onclick="javascript:yesnoCheck();" name="State" required>TamilNadu
-                        <input type="radio" onclick="javascript:yesnoCheck();" name="State" required>Others
+                        <input type="radio" id="state" name="State" required>TamilNadu
+                        <input type="radio" id="state" name="State" required>Others
                     </td>
                 </tr>
                 <tr>
@@ -80,13 +80,13 @@
                         <label>Same as Communication address</label>
                     </td>
                     <td>
-                        <input type="checkbox" id="name" value="Same as Communication address">
+                        <input type="checkbox" id="dob" value="Same as Communication address">
                     </td>
                     <td>
                         <label>District *</label>
                     </td>
                     <td>
-                        <select name="District" id="name">
+                        <select name="District" id="district">
                             <option>Chennai</option>
                             <option>Coimbatore</option>
                             <option>Madurai</option>
@@ -101,13 +101,13 @@
                         <label>Permanent Address *</label>
                     </td>
                     <td>
-                        <textarea rows="6" cols="25" placeholder="Address"></textarea>
+                        <textarea rows="6" cols="25" id="addr_2" placeholder="Address"></textarea>
                     </td>
                     <td>
                         <label>Pincode *</label>
                     </td>
                     <td>
-                        <select name="Pincode" id="name">
+                        <select name="Pincode" id="pincode">
                             <option>600005</option>
                             <option>636005</option>
                             <option>635005</option>
@@ -123,15 +123,15 @@
                         <label>Religion *</label>
                     </td>
                     <td>
-                        <input type="radio" name="Relogion">Hindu
-                        <input type="radio" name="Relogion">Christian
-                        <input type="radio" name="Relogion">Muslim
+                        <input type="radio" id="religion" name="Relogion">Hindu
+                        <input type="radio" id="religion" name="Relogion">Christian
+                        <input type="radio" id="religion" name="Relogion">Muslim
                     </td>
                     <td>
                         <label>Community *</label>
                     </td>
                     <td>
-                        <select name="Community" id="name">
+                        <select name="Community" id="community">
                             <option>BC</option>
                             <option>MBC</option>
                             <option>ST</option>
@@ -147,7 +147,7 @@
                         <label>Aadhar Number *</label>
                     </td>
                     <td>
-                        <input type="number" id="name" placeholder="Enter aadhar number">
+                        <input type="number" id="aadhar" placeholder="Enter aadhar number">
                     </td>
                 </tr>
                 <tr>
@@ -161,7 +161,47 @@
         </form>
 
     </div>
+    <script>
+        function personal() {
+            event.preventDefault();
+            const f_name = document.querySelector("#f_name").value;
+            const l_name = document.querySelector("#l_name").value;
+            const fatherName = document.querySelector("#father_name").value;
+            const motherName = document.querySelector("#mother_name").value;
+            const dob = document.querySelector("#dob").value;
+            const gender = document.querySelector("#gender").value;
+            const state = document.querySelector("#state").value;
+            const addr_1 = document.querySelector("#addr_1").value;
+            const addr_2 = document.querySelector("#addr_2").value;
+            const district = document.querySelector("#district").value;
+            const pincode = document.querySelector("#pincode").value;
+            const religion = document.querySelector("#religion").value;
+            const community = document.querySelector("#community").value;
+            const aadhar = document.querySelector("#dob").value;
 
+            let userObj = {
+                "FirstName": f_name,
+                "LastName": l_name,
+                "FatherName": fatherName,
+                "MotherName": motherName,
+                "DOB": dob,
+                "Gender": gender,
+                "State": state,
+                "Communication Address": addr_1,
+                "Permanent Address": addr_2,
+                "District": district,
+                "Pincode": pincode,
+                "Religion": religion,
+                "Community": community,
+                "AadharNumber": aadhar
+            };
+            console.log(userObj);
+            alert("Registration Successful");
+            window.location.href = "academic.html";
+
+
+        }
+    </script>
 </body>
 
 </html>

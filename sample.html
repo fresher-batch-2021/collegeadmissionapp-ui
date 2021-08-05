@@ -5,206 +5,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Personal-Info</title>
+    <title>Homepage</title>
     <style>
-        h1 {
-            text-align: center;
-            text-decoration: underline;
-            color: blueviolet;
+        * {
+            box-sizing: border-box
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background: url(image.jpg);
-            background-size: cover;
-            background-position: center;
-            font-family: sans-serif;
+            font-family: Verdana, sans-serif;
+            margin: 0
         }
 
-        .name {
-            width: 940px;
-            height: 600px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            top: 60%;
-            left: 50%;
-            position: absolute;
-            transform: translate(-53%, -53%);
-            box-sizing: border-box;
-            padding: 50px 30px;
-            font-family: sans-serif;
-            border-radius: 30px;
+        .mySlides {
+            display: none
         }
-        .submit1:hover {
-            background: red;
-            color: antiquewhite;
+
+        img {
+            vertical-align: middle;
+        }
+
+        .slideshow-container {
+            margin-top: 50px;
+            margin-left: 50px;
+            max-width: 800px;
+            position: relative;
+
+        }
+
+        .prev,
+        .next {
             cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
         }
 
-        .submit1 {
-            width: 100px;
-            height: 30px;
-            border: none;
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+
+        .dot {
+            margin: 0 2px;
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        aside {
+            width: 30%;
+            height: 320px;
+            ;
+            padding-left: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+            float: right;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.39);
+        }
+
+        fieldset {
             border-radius: 10px;
-            padding: 5px;
-            color: black;
+            width: 330px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        marquee {
+            margin-top: 20px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
-
 </head>
 
 <body>
-        <h1>Personal-Information</h1>
-    <div class="name">
-        
-        <form action="academic.html">
-            <table align="center" colspan="2" cellpadding="10">
-                <tr>
-                    <td>
-                        <label>First Name *</label>
-                    </td>
-                    <td>
-                        <input type="text" id="name" placeholder="FirstName" required>
-                    </td>
-                    <td>
-                        <label>Last Name *</label>
-                    </td>
-                    <td>
-                        <input type="text" id="name" placeholder="Lastname" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Father Name *</label>
-                    </td>
-                    <td>
-                        <input type="text" id="name" placeholder="Fathername" required>
-                    </td>
-                    <td>
-                        <label>Mother Name *</label>
-                    </td>
-                    <td>
-                        <input type="text" id="name" placeholder="Mothername" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Date Of Birth *</label>
-                    </td>
-                    <td>
-                        <input type="date" id="name" placeholder="DOB" required>
-                    </td>
-                    <td>
-                        Gender *
-                    </td>
-                    <td>
-                        <input type="radio" name="gender" required>Male
-                        <input type="radio" name="gender" required>Female
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Communicatio-Address</label>
-                    </td>
-                    <td>
-                        <textarea rows="6" cols="25" placeholder="Address"></textarea>
-                    </td>
-                    <td>
-                        <label>State *</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="State" required>TamilNadu
-                        <input type="radio" name="State" required>Others
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Same as Communication address</label>
-                    </td>
-                    <td>
-                        <input type="checkbox" id="name" value="Same as Communication address">
-                    </td>
-                    <td>
-                        <label>District *</label>
-                    </td>
-                    <td>
-                        <select name="District" id="name">
-                            <option>Chennai</option>
-                            <option>Coimbatore</option>
-                            <option>Madurai</option>
-                            <option>Salem</option>
-                            <option>Trichy</option>
-                        </select>
-                    </td>
+    <header id="menubar"></header>
+    <main>
+        <aside>
+            <h2>News and Events</h2>
+            <marquee width="90%" direction="up" onmouseover="this.stop()" onmouseout="this.start()" height="250px">
+                <fieldset>
+                    <h3><a href="#" style="text-decoration: none;">Covid-19 Vaccine Camp</a></h3>
+                    <br>
+                    <p>15th-31st August-2021</p>
+                    <br>
+                    <button>Register now</button>
+                </fieldset>
+                <fieldset>
+                    <h3><a href="#" style="text-decoration: none; ">ATAL FACULTY DEVELOPMENT PROGRAM</a></h3>
+                    <br>
+                    <p>5th-10th August-2021</p>
+                    <br>
+                    <p>
+                        Conducted by Department of CSE.
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <h3><a href="#" style="text-decoration: none;">Exam Timetable</a></h3>
+                    <br>
+                    <p>IV/VI SEM B.E/B.TECH/M.TECH(Regular)</p>
+                    <br>
+                    <button>View now</button>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <h3> <a href="#" style="text-decoration: none;">ICREAT-2021</a></h3>
+                    <br>
+                    <p>Conducted By Department of EEE/ECE/E&I</p>
+                    <br>
+                    <button>Register Here</button>
+                </fieldset>
 
-                </tr>
-                <tr>
-                    <td>
-                        <label>Permanent Address *</label>
-                    </td>
-                    <td>
-                        <textarea rows="6" cols="25" placeholder="Address"></textarea>
-                    </td>
-                    <td>
-                        <label>Pincode *</label>
-                    </td>
-                    <td>
-                        <select name="Pincode" id="name">
-                            <option>600005</option>
-                            <option>636005</option>
-                            <option>635005</option>
-                            <option>600405</option>
-                            <option>634006</option>
-                        </select>
-                    </td>
+            </marquee>
 
-                </tr>
+        </aside>
 
-                <tr>
-                    <td>
-                        <label>Religion *</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="Relogion">Hindu
-                        <input type="radio" name="Relogion">Christian
-                        <input type="radio" name="Relogion">Muslim
-                    </td>
-                    <td>
-                        <label>Community *</label>
-                    </td>
-                    <td>
-                        <select name="Community" id="name">
-                            <option>BC</option>
-                            <option>MBC</option>
-                            <option>ST</option>
-                            <option>SC</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
+        <div class="slideshow-container">
 
-                </tr>
-                <tr>
-                    <td>
-                        <label>Aadhar Number *</label>
-                    </td>
-                    <td>
-                        <input type="number" id="name" placeholder="Enter aadhar number">
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" colspan="2">
-                        <input class="submit1" type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="submit2" type="submit" id="reset" value="Save & Continue">
-                    </td>
-                </tr>
+            <div class="mySlides fade">
+                <img src="Assets/images/image1.jfif" style="width:100%">
+            </div>
 
-            </table>
-        </form>
+            <div class="mySlides fade">
+                <img src="Assets/images/image2.jpg" style="width:100%">
+            </div>
 
-    </div>
+            <div class="mySlides fade">
+                <img src="Assets/images/image4.jpg" style="width:100%">
+            </div>
 
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+
+        </div>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script>
+            $("#menubar").load("_header.html");
+        </script>
+    </main>
 </body>
 
 </html>
