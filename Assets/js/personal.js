@@ -21,44 +21,43 @@ function personal() {
         return false;
     }
     const dob = document.querySelector("#dob").value;
-    if (dob == "" || dob == null || dob == undefined ) {
+    if (dob == "" || dob == null ) {
         alert("Invalid DateOfBirth");
         return false;
     }
     const gender = document.querySelector("#gender").value;
-    if (gender == "" || gender == null || gender == undefined) {
+    if (gender == "" || gender == null) {
         alert("Invalid Gender");
         return false;
     }
     const state = document.querySelector("#state").value;
-    if (state == "" || state == null || state == undefined) {
+    if (state == "" || state == null ) {
         alert("Invalid state");
     }
     const addr_1 = document.querySelector("#addr_1").value;
-    if (addr_1 == "" || addr_1 == null || addr_1 == undefined ) {
+    if (addr_1 == "" || addr_1 == null || addr_1 == undefined) {
         alert("Invalid Address");
         return false;
     }
     const addr_2 = document.querySelector("#addr_2").value;
-    if (addr_2 == "" || addr_2 == null || addr_2 == undefined ) {
+    if (addr_2 == "" || addr_2 == null || addr_2 == undefined) {
         alert("Invalid Address");
         return false;
     }
     const district = document.querySelector("#district").value;
-    if (district == "" || district == null || district == undefined) {
+    if (district == "" || district == null) {
         alert("Invalid District");
         return false;
     }
     const religion = document.querySelector("#religion").value;
-    if (religion == "" || religion == null || religion == undefined) {
+    if (religion == "" || religion == null) {
         alert("Invalid Religion");
         return false;
     }
     const community = document.querySelector("#community").value;
     const aadhar = document.querySelector("#aadhar").value;
-    if (aadhar == "" || aadhar == null || aadhar == undefined) {
-        alert("Invalid Aadhar Number");
-        return false;
+    if (aadhar.length != 12) {
+        alert("Invalid Aadhar Number")
     }
     else {
         passenger_details()
