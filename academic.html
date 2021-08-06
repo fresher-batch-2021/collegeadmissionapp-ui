@@ -6,81 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url(image.jpg);
-            background-size: cover;
-            background-position: center;
-            font-family: sans-serif;
-        }
-
-
-        .academic {
-            width: 550px;
-            height: 630px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            top: 55%;
-            left: 50%;
-            position: absolute;
-            transform: translate(-55%, -55%);
-            box-sizing: border-box;
-            padding: 50px 30px;
-            font-family: sans-serif;
-            border-radius: 10px;
-        }
-
-        h1 {
-            margin: 0;
-            padding: 0 0 20px;
-            text-align: center;
-            font-size: 30px;
-            text-decoration: underline;
-        }
-
-        .academic input[type="submit"],
-        input[type="reset"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: aqua;
-            color: blue;
-            font-size: 18px;
-            border-radius: 20px;
-        }
-
-        .academic input[type="submit"]:hover,
-        input[type="reset"]:hover {
-            cursor: pointer;
-            background: greenyellow;
-            color: #000;
-        }
-
-        a {
-            text-align: right;
-        }
-
-        .submit {
-            margin-top: 10px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="Assets/css/academic.css">
 </head>
 
 <body>
+
     <div class="academic">
-        <form>
+        <form action="preview.html" onsubmit="academic()">
             <h1>Academic Information</h1>
             <table cellpadding="10">
-                <caption>Academic Information</caption>
+                <caption></caption>
                 <tr>
                     <td>
                         <label>Qualifying Examination</label>
                     </td>
                     <td>
-                        <select name="exam">
+                        <select name="exam" id="exam">
                             <option>HSC</option>
                             <option>Diplomo</option>
                         </select>
@@ -91,7 +32,7 @@
                         <label>Name Of Board</label>
                     </td>
                     <td>
-                        <select name="board">
+                        <select name="board" id="board">
                             <option>State Board</option>
                             <option>CBSE</option>
                             <option>Others</option>
@@ -103,7 +44,7 @@
                         <label>HSC Reg-No</label>
                     </td>
                     <td>
-                        <input type="tel" id="name" placeholder="Enter RegNo">
+                        <input type="tel" id="regno" maxlength="6" placeholder="Enter RegNo">
                     </td>
                 </tr>
                 <tr>
@@ -119,7 +60,7 @@
                         <label>HSC Group Code</label>
                     </td>
                     <td>
-                        <select name="group">
+                        <select name="group" id="group">
                             <option>Maths Biology</option>
                             <option>Maths Computer</option>
                             <option>Vocational</option>
@@ -131,17 +72,9 @@
                         <label>Medium of Instructions</label>
                     </td>
                     <td>
-                        <input type="radio" id="name" name="Medium">Tamil
-                        <input type="radio" id="name" name="Medium">English
-                        <input type="radio" id="name" name="Medium">Others
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>If others Specify</label>
-                    </td>
-                    <td>
-                        <input type="text" id="name" placeholder="Enter Medium">
+                        <input type="radio" id="medium" name="Medium">Tamil
+                        <input type="radio" id="medium" name="Medium">English
+                        <input type="radio" id="medium" name="Medium">Others
                     </td>
                 </tr>
                 <tr>
@@ -149,7 +82,7 @@
                         <label>HSC Maximum(Total)Marks</label>
                     </td>
                     <td>
-                        <input type="number" id="name" placeholder="Enter Marks">
+                        <input type="number" id="mark1" placeholder="Enter Marks">
                     </td>
                 </tr>
                 <tr>
@@ -157,7 +90,7 @@
                         <label>HSC Obtained(Total)Marks</label>
                     </td>
                     <td>
-                        <input type="number" id="name" placeholder="Enter Marks">
+                        <input type="number" id="mark2" placeholder="Enter Marks">
                     </td>
                 </tr>
                 <tr>
@@ -165,7 +98,7 @@
                         <label>SSLC Maximum(Total)Marks</label>
                     </td>
                     <td>
-                        <input type="number" id="name" placeholder="Enter Marks">
+                        <input type="number" id="mark3" placeholder="Enter Marks">
                     </td>
                 </tr>
                 <tr>
@@ -173,7 +106,7 @@
                         <label>HSC Obtained(Total)Marks</label>
                     </td>
                     <td>
-                        <input type="number" id="name" placeholder="Enter Marks">
+                        <input type="number" id="mark4" placeholder="Enter Marks">
                     </td>
                 </tr>
             </table>
@@ -181,7 +114,60 @@
                 <input class="submit1" type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
                 <input class="submit2" type="submit" id="reset" value="Save & Continue">
             </div>
+
         </form>
+        <script>
+            function academic() {
+                const exam = document.querySelector("#exam").value;
+                if (exam == null || exam == "") {
+                    alert("Invalid Passed Exam");
+                    return false;
+                }
+                const board = document.querySelector("#board").value;
+                if (board == null || board == undefined) {
+                    alert("Invalid Board of Examination");
+                    return false;
+                }
+                const regno = document.querySelector("#regno").value;
+                if (regno.length != 6) {
+                    alert("Invalid REGNO");
+                    return false;
+                }
+                const group = document.querySelector("#group").value;
+                if (group == null || group == undefined) {
+                    alert("Invalid Group");
+                    return false;
+                }
+                const medium = document.querySelector("#medium").value;
+                if (medium == null || medium == "") {
+                    alert("Invalid Medium");
+                    return false;
+                }
+                const maxMark = document.querySelector("#mark1").value;
+                if (maxMark == null || maxMark == "") {
+                    alert("Invalid Marks");
+                    return false;
+                }
+                const totalMark = document.querySelector("#mark2").value;
+                if (totalMark == null || totalMark == "") {
+                    alert("Invalid Marks");
+                    return false;
+                }
+                const maxMark1 = document.querySelector("#mark3").value;
+                if (maxMark1 == "" || maxMark1 == null) {
+                    alert("Invalid Marks");
+                    return false;
+                }
+                const totalMark1 = document.querySelector("#mark4").value;
+                if (totalMark1 == "" || totalMark1 == null) {
+                    alert("Invalid Marks");
+                    return false;
+                } else {
+                    alert("Successfull");
+                    window.location.href = "preview.html";
+                }
+            }
+        </script>
     </div>
 
 </body>

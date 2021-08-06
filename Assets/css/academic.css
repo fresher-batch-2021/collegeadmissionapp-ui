@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(image.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+
+.academic {
+    width: 550px;
+    height: 630px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-55%, -55%);
+    box-sizing: border-box;
+    padding: 50px 30px;
+    font-family: sans-serif;
+    border-radius: 10px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.academic input[type="submit"],
+input[type="reset"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: aqua;
+    color: blue;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.academic input[type="submit"]:hover,
+input[type="reset"]:hover {
+    cursor: pointer;
+    background: greenyellow;
+    color: #000;
+}
+
+a {
+    text-align: right;
+}
+
+.submit {
+    margin-top: 10px;
+    text-align: center;
+}

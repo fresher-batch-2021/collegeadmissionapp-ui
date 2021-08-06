@@ -59,9 +59,7 @@ function personal() {
     if (aadhar.length != 12) {
         alert("Invalid Aadhar Number")
     }
-    else {
-        passenger_details()
-    }
+
 
     let userObj = {
         "FirstName": f_name,
@@ -79,8 +77,8 @@ function personal() {
         "AadharNumber": aadhar
     };
     console.log(userObj);
-    // alert("Registration Successful");
-    // window.location.href = "academic.html";
+    alert("Registration Successful");
+    window.location.href = "academic.html";
 }
 function show1() {
     document.getElementById('div1').style.display = 'none';
@@ -93,21 +91,4 @@ function show3() {
 }
 function show4() {
     document.getElementById('div2').style.display = 'block';
-}
-function passenger_details() {
-    event.preventDefault();
-    var tableBody = document.querySelector("#passenger_tablebody");
-    var row = document.createElement('tr');
-    var table_data_name = document.createElement('td');
-    var table_data_age = document.createElement('td');
-    var table_data_gender = document.createElement('td');
-    table_data_name.textContent = document.getElementById("f_name").value;
-    table_data_age.textContent = document.getElementById("l_name").value;
-    table_data_gender.textContent = document.getElementById("father_name").value;
-    row.appendChild(table_data_name);
-    row.appendChild(table_data_age);
-    row.appendChild(table_data_gender);
-    tableBody.append(row);
-
-    return false;
 }
