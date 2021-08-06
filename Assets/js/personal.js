@@ -1,27 +1,27 @@
 function personal() {
     event.preventDefault();
     const f_name = document.querySelector("#f_name").value;
-    if (f_name == "" || f_name == null || f_name == undefined || f_name.trim == "") {
+    if (f_name == "" || f_name == null || f_name.trim == "") {
         alert("Invalid Name");
         return false;
     }
     const l_name = document.querySelector("#l_name").value;
-    if (l_name == "" || l_name == null || l_name == undefined || l_name.trim == "") {
+    if (l_name == "" || l_name == null || l_name.trim == "") {
         alert("Invalid LastName");
         return false;
     }
     const fatherName = document.querySelector("#father_name").value;
-    if (fatherName == "" || fatherName == null || fatherName == undefined || fatherName.trim == "") {
+    if (fatherName == "" || fatherName == null || fatherName.trim == "") {
         alert("Invalid Father name");
         return false;
     }
     const motherName = document.querySelector("#mother_name").value;
-    if (motherName == "" || motherName == null || motherName == undefined || motherName.trim == "") {
+    if (motherName == "" || motherName == null || motherName.trim == "") {
         alert("Invalid MotherName");
         return false;
     }
     const dob = document.querySelector("#dob").value;
-    if (dob == "" || dob == null ) {
+    if (dob == "" || dob == null) {
         alert("Invalid DateOfBirth");
         return false;
     }
@@ -31,7 +31,7 @@ function personal() {
         return false;
     }
     const state = document.querySelector("#state").value;
-    if (state == "" || state == null ) {
+    if (state == "" || state == null) {
         alert("Invalid state");
     }
     const addr_1 = document.querySelector("#addr_1").value;
