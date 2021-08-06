@@ -118,6 +118,7 @@
         </form>
         <script>
             function academic() {
+                event.preventDefault();
                 const exam = document.querySelector("#exam").value;
                 if (exam == null || exam == "") {
                     alert("Invalid Passed Exam");
