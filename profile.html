@@ -7,11 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profile</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             margin: auto;
         }
 
-        img {
+        .background {
             margin-top: 50px;
             margin-left: 50px;
             margin-right: 50px;
@@ -27,11 +32,11 @@
 </head>
 
 <body>
-    <header id="menubar"></header>
+    <header id="header"></header>
     <main>
         <form action="homepage.html">
 
-            <img src="pro1.jfif" alt="Profile">
+            <img class="background" src="pro1.jfif" alt="Profile">
 
             <div class="profile">
                 <h3>Quality Policy</h3>
@@ -54,7 +59,8 @@
                 <h3>Mission</h3>
                 <br>
                 <ul>
-                    <li>To instill ethical values, imbibe a sense of social responsibility and strive for societal wellbeing.</li>
+                    <li>To instill ethical values, imbibe a sense of social responsibility and strive for societal
+                        wellbeing.</li>
                     <br>
                     <li>To identify needs of society and offer sustainable solutions through outreach programs.</li>
                     <br>
@@ -62,7 +68,7 @@
             </div>
             <script src="assets/js/jquery.min.js"></script>
             <script>
-                $("#menubar").load("_header.html");
+                $("#header").load("_header.html");
             </script>
     </main>
     </form>
