@@ -38,3 +38,9 @@ h1 {
     border-radius: 3px;
 
 }
+.logo{
+    background-color: blue;
+}
+.logo img{
+    margin-left: 10px;
+}
