@@ -61,3 +61,8 @@ body {
 .hide {
     display: none;
 }
+.submit{
+    margin-top: 20px;
+    text-align: center;
+    
+}

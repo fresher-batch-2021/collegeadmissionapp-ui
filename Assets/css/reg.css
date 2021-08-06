@@ -34,6 +34,9 @@ h1 {
     padding: 50px 30px;
     font-family: sans-serif;
     border-radius: 20px;
-
+}
+.buttons{
+    margin-top: 10px;
+    margin-left: 120px;
 }
 

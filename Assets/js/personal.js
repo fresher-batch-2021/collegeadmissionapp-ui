@@ -81,7 +81,7 @@ function personal() {
     };
     console.log(userObj);
     // alert("Registration Successful");
-     window.location.href = "academic.html";
+    // window.location.href = "academic.html";
 }
 function show1() {
     document.getElementById('div1').style.display = 'none';
