@@ -21,7 +21,7 @@ function personal() {
         return false;
     }
     const dob = document.querySelector("#dob").value;
-    if (dob == "" || dob == null || dob == undefined || dob.trim == "") {
+    if (dob == "" || dob == null || dob == undefined ) {
         alert("Invalid DateOfBirth");
         return false;
     }
@@ -35,12 +35,12 @@ function personal() {
         alert("Invalid state");
     }
     const addr_1 = document.querySelector("#addr_1").value;
-    if (addr_1 == "" || addr_1 == null || addr_1 == undefined || addr_1.trim == "") {
+    if (addr_1 == "" || addr_1 == null || addr_1 == undefined ) {
         alert("Invalid Address");
         return false;
     }
     const addr_2 = document.querySelector("#addr_2").value;
-    if (addr_2 == "" || addr_2 == null || addr_2 == undefined || addr_2.trim == "") {
+    if (addr_2 == "" || addr_2 == null || addr_2 == undefined ) {
         alert("Invalid Address");
         return false;
     }
