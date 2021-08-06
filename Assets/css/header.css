@@ -40,7 +40,9 @@ h1 {
 }
 .logo{
     background-color: blue;
+   
 }
 .logo img{
     margin-left: 10px;
+    padding-right: 50px;
 }
