@@ -5,8 +5,19 @@ function register() {
     const dob = document.querySelector("#dob").value;
     const email = document.querySelector("#email").value;
     const userName = document.querySelector("#userName").value;
-    const password1 = document.querySelector("#userPassword").value;
+    const userPassword = document.querySelector("#userPassword").value;
     const password2 = document.querySelector("#confirmPassword").value;
+
+    let url = "https://product-mock-api.herokuapp.com/collegeadmissionapp/api/v1/auth/register";
+    let formData = {
+        name: name,
+        username: userName,
+        dob: dob,
+        email: email,
+        contactNo: mobile,
+        password: userPassword,
+        role: "ADMIN"
+    }
 
     if (name == "" || name == null || name.trim() == "" || name == undefined) {
         alert("Invalid Name");
@@ -23,27 +34,25 @@ function register() {
     } else if (userName == "" || userName == null || userName == undefined) {
         alert("Invalid UserName");
         return false;
-    } else if (password1 == "") {
+    } else if (userPassword == "") {
         alert("Enter User Password");
         return false;
     } else if (password2 == "") {
         alert("Enter Confirm Password");
         return false;
-    } else if (password1 != password2) {
+    } else if (userPassword != password2) {
         alert("Invaid Password");
         return false;
     } else {
-        let userObj = {
-
-            "name": name,
-            "contactNumber": mobile,
-            "dateOfBirth": dob,
-            "email": email,
-            "userName": userName,
-            "password": password1
-        };
-        console.log(userObj);
-        alert("Registration Successful");
-        window.location.href = "login.html";
+        axios.post(url, formData).then(res => {
+            let data = res.data;
+            console.log(data);
+            alert("Successffully Register");
+            window.location.href = "login.html";
+        }).catch(err => {
+            console.error(err);
+            alert("Unable to register");
+        });
     }
+
 }
