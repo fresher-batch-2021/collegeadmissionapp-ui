@@ -1,27 +1,27 @@
 function login() {
     event.preventDefault();
-    const email = "Moudhisaran";
-    const pass = "Manidev17*";
+    const email = "manikandandeva22@gmail.com";
+    const passCode = "Manidev17*";
     const userName = document.querySelector("#userName").value;
-    if (userName == "" || userName == null || userName.trim == "" || userName == undefined) {
+    const password = document.querySelector("#password").value;
+
+    if (userName == "" || userName == null || userName.trim() == "" || userName == undefined) {
         alert("Invalid Username");
         return false;
-    }
-    const password = document.querySelector("#password").value;
-    if (password == "" || password == null || password.trim == "" || password == undefined) {
+    } else if (password == "" || password == null || password.trim() == "" || password == undefined) {
         alert("Invalid Password");
         return false;
-    }
-    if (email == userName && pass == password) {
-        alert("Registration Successful");
+    } else if (email != userName || passCode != password) {
+        alert("Registration failed && Invalid Details");
+        return false;
     } else {
-        alert("Registration failed && Invalid Details")
-    }
-    let userObj = {
+        alert("Login Successful");
+        let userObj = {
 
-        "User_Name": userName,
-        "Password": password
-    };
-    console.log(userObj);
-    window.location.href = "personalinfo.html";
+            "userName": userName,
+            "password": password
+        };
+        console.log(userObj);
+        window.location.href = "personalinfo.html";
+    }
 }

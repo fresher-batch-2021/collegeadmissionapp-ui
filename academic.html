@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="Assets/css/academic.css">
+    <script src="Assets/js/academic.js"></script>
 </head>
 
 <body>
@@ -14,161 +15,128 @@
     <div class="academic">
         <form action="preview.html" onsubmit="academic()">
             <h1>Academic Information</h1>
-            <table cellpadding="10">
+            <table class="table" cellpadding="10">
                 <caption></caption>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>Qualifying Examination</label>
-                    </td>
+                    </th>
                     <td>
                         <select name="exam" id="exam">
-                            <option>HSC</option>
-                            <option>Diplomo</option>
+                            <option value="">--select--</option>
+                            <option value="HSC">HSC</option>
+                            <option value="Diplomo">Diplomo</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>Name Of Board</label>
-                    </td>
+                    </th>
                     <td>
                         <select name="board" id="board">
-                            <option>State Board</option>
-                            <option>CBSE</option>
-                            <option>Others</option>
+                            <option value="">--select--</option>
+                            <option value="State Board">State Board</option>
+                            <option value="CBSE">CBSE</option>
+                            <option value="Others">Others</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>HSC Reg-No</label>
-                    </td>
+                    </th>
                     <td>
-                        <input type="tel" id="regno" maxlength="6" placeholder="Enter RegNo">
+                        <input type="tel" id="regno" maxlength="6" placeholder="Enter RegNo" autocomplete="off">
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>Qualifying Year</label>
-                    </td>
+                    </th>
                     <td>
-                        <input type="month" id="name" placeholder="YOP">
+                        <input type="month" id="year" placeholder="YOP">
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>HSC Group Code</label>
-                    </td>
+                    </th>
                     <td>
                         <select name="group" id="group">
-                            <option>Maths Biology</option>
-                            <option>Maths Computer</option>
-                            <option>Vocational</option>
+                            <option value="">--select--</option>
+                            <option value="Maths Biology">Maths Biology</option>
+                            <option value="Maths Computer">Maths Computer</option>
+                            <option value="Vocational">Vocational</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>Medium of Instructions</label>
-                    </td>
+                    </th>
                     <td>
-                        <input type="radio" id="medium" name="Medium">Tamil
-                        <input type="radio" id="medium" name="Medium">English
-                        <input type="radio" id="medium" name="Medium">Others
+                        <input type="radio" id="medium" name="Medium" value="Tamil">Tamil &nbsp;
+                        <input type="radio" id="medium" name="Medium" value="English">English&nbsp;
+                        <input type="radio" id="medium" name="Medium" value="Others">Others
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>HSC Maximum(Total)Marks</label>
-                    </td>
+                    </th>
                     <td>
                         <input type="number" id="mark1" placeholder="Enter Marks">
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>HSC Obtained(Total)Marks</label>
-                    </td>
+                    </th>
                     <td>
                         <input type="number" id="mark2" placeholder="Enter Marks">
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th scope="col">
                         <label>SSLC Maximum(Total)Marks</label>
-                    </td>
+                    </th>
                     <td>
                         <input type="number" id="mark3" placeholder="Enter Marks">
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <label>HSC Obtained(Total)Marks</label>
-                    </td>
+                    <th scope="col">
+                        <label>SSLC Obtained(Total)Marks</label>
+                    </th>
                     <td>
                         <input type="number" id="mark4" placeholder="Enter Marks">
                     </td>
                 </tr>
+                <tr>
+                    <th scope="col">
+                        <label>Choose Branch(Stream)</label>
+                    </th>
+                    <td>
+                        <select id="branch">
+                            <option value="">--select--</option>
+                            <option value="Electrical and Electronics Engineering">Electrical and Electronics
+                                Engineering</option>
+                            <option value="Electronics and Communication Engineering">Electronics and Communication
+                                Engineering</option>
+                            <option value="Computer Science Engineering">Computer Science Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        </select>
+                    </td>
+                </tr>
             </table>
             <div class="submit">
-                <input class="submit1" type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
-                <input class="submit2" type="submit" id="reset" value="Save & Continue">
+                <input type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" id="reset" value="Save & Continue">
             </div>
-
         </form>
-        <script>
-            function academic() {
-                event.preventDefault();
-                const exam = document.querySelector("#exam").value;
-                if (exam == null || exam == "") {
-                    alert("Invalid Passed Exam");
-                    return false;
-                }
-                const board = document.querySelector("#board").value;
-                if (board == null || board == undefined) {
-                    alert("Invalid Board of Examination");
-                    return false;
-                }
-                const regno = document.querySelector("#regno").value;
-                if (regno.length != 6) {
-                    alert("Invalid REGNO");
-                    return false;
-                }
-                const group = document.querySelector("#group").value;
-                if (group == null || group == undefined) {
-                    alert("Invalid Group");
-                    return false;
-                }
-                const medium = document.querySelector("#medium").value;
-                if (medium == null || medium == "") {
-                    alert("Invalid Medium");
-                    return false;
-                }
-                const maxMark = document.querySelector("#mark1").value;
-                if (maxMark == null || maxMark == "") {
-                    alert("Invalid Marks");
-                    return false;
-                }
-                const totalMark = document.querySelector("#mark2").value;
-                if (totalMark == null || totalMark == "") {
-                    alert("Invalid Marks");
-                    return false;
-                }
-                const maxMark1 = document.querySelector("#mark3").value;
-                if (maxMark1 == "" || maxMark1 == null) {
-                    alert("Invalid Marks");
-                    return false;
-                }
-                const totalMark1 = document.querySelector("#mark4").value;
-                if (totalMark1 == "" || totalMark1 == null) {
-                    alert("Invalid Marks");
-                    return false;
-                } else {
-                    alert("Successfull");
-                    window.location.href = "preview.html";
-                }
-            }
-        </script>
+
     </div>
 
 </body>

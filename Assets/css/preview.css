@@ -1,0 +1,33 @@
+table {
+    margin: auto;
+}
+
+.submit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.submit input[type="submit"],
+input[type="button"] {
+    border: none;
+    outline: none;
+    height: 30px;
+    background: aqua;
+    color: blue;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.submit input[type="submit"]:hover,
+input[type="button"]:hover {
+    cursor: pointer;
+    background: greenyellow;
+    color: #000;
+}
+legend{
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+}

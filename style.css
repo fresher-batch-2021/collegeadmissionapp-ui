@@ -34,11 +34,11 @@ h1{
     text-align: center;
     font-size: 22px;
 }
-.login_box p{
+.login_box label{
     margin: 0;
     padding: 0;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .login_box input{
     width: 100%;

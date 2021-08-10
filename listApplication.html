@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+</head>
+
+<body>
+    <main>
+        <h3>Application-Details</h3>
+        <section></section>
+        <section>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Candidate Name</th>
+                        <th>Contact Number</th>
+                        <th>Date of Birth</th>
+                        <th>Email-ID</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks-table"></tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        function displayTasks() {
+            let tasks = [
+                {
+                    id: 1,
+                    name: "Ganesh",
+                    contactNumber: 1234567890,
+                    dob: "10-06-1997",
+                    emailId: "ganesh@gmail.com"
+                },
+                {
+                    id: 2,
+                    name: "Ranesh",
+                    contactNumber: 1234567890,
+                    dob: "10-06-1998",
+                    emailId: "rajesh@gmail.com"
+                }
+            ];
+            let content = "";
+            for (let taskObj of tasks) {
+                content =
+                    content +
+                    `<tr><td>${taskObj.id}</td><td>${taskObj.name}</td><td>${taskObj.contactNumber}
+                        </td><td>${taskObj.dob}</td><td>${taskObj.dob}</td></tr>`;
+            }
+            console.log(content);
+            document.querySelector("#tasks-table").innerHTML = content;
+        }
+        displayTasks();
+    </script>
+</body>
+
+</html>
