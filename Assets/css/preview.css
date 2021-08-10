@@ -1,12 +1,21 @@
-table {
-    margin: auto;
+*{
+    margin: 0;
+    padding: 0;
 }
-
+.table {
+    width: 600px;
+    height: 280px;
+    color: black;
+    margin: auto; 
+}
+fieldset{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
 .submit {
-    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-
 }
 
 .submit input[type="submit"],
