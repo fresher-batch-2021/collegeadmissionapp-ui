@@ -35,10 +35,10 @@ function personal() {
     } else if (state == "" || state == null) {
         alert("Invalid state");
     } else if (communicationAddress == "" || communicationAddress == null || communicationAddress == undefined) {
-        alert("Invalid Address");
+        alert("Invalid Communication Address");
         return false;
     } else if (permanentAddress == "" || permanentAddress == null || permanentAddress == undefined) {
-        alert("Invalid Address");
+        alert("Invalid Permanent Address");
         return false;
     } else if (district == "" || district == null) {
         alert("Invalid District");

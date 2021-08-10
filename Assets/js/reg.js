@@ -24,10 +24,10 @@ function register() {
         alert("Invalid UserName");
         return false;
     } else if (password1 == "") {
-        alert("Enter Password");
+        alert("Enter User Password");
         return false;
-    } else if (password1 == "") {
-        alert("Enter Password");
+    } else if (password2 == "") {
+        alert("Enter Confirm Password");
         return false;
     } else if (password1 != password2) {
         alert("Invaid Password");

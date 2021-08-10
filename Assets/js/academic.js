@@ -30,16 +30,16 @@ function academic() {
         alert("Invalid Medium");
         return false;
     } else if (hscMaxMark == null || hscMaxMark == "") {
-        alert("Invalid Marks");
+        alert("Invalid HSC Max Marks");
         return false;
     } else if (hscTotalMark == null || hscTotalMark == "") {
-        alert("Invalid Marks");
+        alert("Invalid HSC Total Marks");
         return false;
     } else if (sslcMaxMark == "" || sslcMaxMark == null) {
-        alert("Invalid Marks");
+        alert("Invalid SSLC Max Marks");
         return false;
     } else if (sslcTotalMark == "" || sslcTotalMark == null) {
-        alert("Invalid Marks");
+        alert("Invalid SSLC Total Marks");
         return false;
     } else if (branch == "" || branch == null) {
         alert("Invalid Branch");
