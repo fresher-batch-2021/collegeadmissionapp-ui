@@ -20,62 +20,65 @@
             <table cellpadding="10">
                 <caption></caption>
                 <tr>
-                    <td>
+                    <th>
                         <label>Candidate Name</label>
-                    </td>
+                    </th>
                     <td>
                         <input type="text" id="name" placeholder="Candidate Name" required>
                     </td>
                 </tr>
                 <tr>
 
-                    <td>
+                    <th>
                         <label>Mobile Number</label>
-                    </td>
+                    </th>
 
                     <td>
-                        <input type="tel" id="contact" placeholder="Mobile number" pattern="[0-9]{10}" required>
+                        <input type="tel" id="contact" placeholder="Mobile number" minlength="10" maxlength="10"
+                            required>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         Date of Birth
-                    </td>
+                    </th>
                     <td>
                         <input type="date" id="dob" name="date" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         <label>Email-ID</label>
-                    </td>
+                    </th>
                     <td>
                         <input type="email" id="email" placeholder="Email-ID" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         <label>UserName</label>
-                    </td>
+                    </th>
                     <td>
-                        <input type="text" id="user" placeholder="Username" required>
+                        <input type="text" id="userName" placeholder="Username" required>
                     </td>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         <label>Password</label>
-                    </td>
+                    </th>
                     <td>
-                        <input type="password" minlength="8" id="pass1" placeholder="Password" minlength="8" required>
+                        <input type="password" minlength="8" id="userPassword" placeholder="Password" minlength="8"
+                            required>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         <label>Confirm Password</label>
-                    </td>
+                    </th>
                     <td>
-                        <input type="password" minlength="8" id="pass2" placeholder="Password" minlength="8" required>
+                        <input type="password" minlength="8" id="confirmPassword" placeholder="Password" minlength="8"
+                            required>
                     </td>
                 </tr>
             </table>
