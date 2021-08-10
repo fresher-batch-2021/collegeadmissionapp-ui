@@ -11,37 +11,37 @@ function academic() {
     const sslcMaxMark = document.querySelector("#mark3").value;
     const sslcTotalMark = document.querySelector("#mark4").value;
     const branch = document.querySelector("#branch").value;
-    if (exam == null || exam == "") {
+    if (exam == "") {
         alert("Invalid Passed Exam");
         return false;
-    } else if (board == null || board == undefined) {
+    } else if (board == "") {
         alert("Invalid Board of Examination");
         return false;
     } else if (regno.length != 6) {
         alert("Invalid REGNO");
         return false;
-    } else if (yearOfPassing == "" || yearOfPassing == null) {
+    } else if (yearOfPassing == "" ) {
         alert("Invalid Year Of Passing");
         return false;
-    } else if (group == null || group == undefined) {
+    } else if (group == null ) {
         alert("Invalid Group");
         return false;
-    } else if (medium == null || medium == "") {
+    } else if ( medium == "") {
         alert("Invalid Medium");
         return false;
-    } else if (hscMaxMark == null || hscMaxMark == "") {
+    } else if ( hscMaxMark == "") {
         alert("Invalid HSC Max Marks");
         return false;
-    } else if (hscTotalMark == null || hscTotalMark == "") {
+    } else if ( hscTotalMark == "") {
         alert("Invalid HSC Total Marks");
         return false;
-    } else if (sslcMaxMark == "" || sslcMaxMark == null) {
+    } else if ( sslcMaxMark == null) {
         alert("Invalid SSLC Max Marks");
         return false;
-    } else if (sslcTotalMark == "" || sslcTotalMark == null) {
+    } else if (sslcTotalMark == "" ) {
         alert("Invalid SSLC Total Marks");
         return false;
-    } else if (branch == "" || branch == null) {
+    } else if (branch == "" ) {
         alert("Invalid Branch");
         return false;
     } else {
