@@ -46,17 +46,17 @@ function academic() {
         return false;
     } else {
         let userObj = {
-            "Qualified_Exam": exam,
-            "Examination_Board": board,
-            "YOP": yearOfPassing,
-            "Register_Number": regno,
-            "Group_Code": group,
-            "Medium": medium,
-            "HSC_Max_Marks": hscMaxMark,
-            "HSC_Total_Marks": hscTotalMark,
-            "SSLC_Max_Marks": sslcMaxMark,
-            "SSLC_Total_Marks": sslcTotalMark,
-            "Branch": branch
+            "qualifiedExam": exam,
+            "examinationBoard": board,
+            "yearofPassing": yearOfPassing,
+            "registerNumber": regno,
+            "groupCode": group,
+            "medium": medium,
+            "hscMaxMark": hscMaxMark,
+            "hscTotalMark": hscTotalMark,
+            "sslcMaxMark": sslcMaxMark,
+            "sslcTotalMark": sslcTotalMark,
+            "branch": branch
         }
         console.log(userObj);
         alert("Successfull");
