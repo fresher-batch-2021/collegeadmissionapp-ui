@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .table {
+            width: 850px;
+            height: 580px;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px 20px 20px 20px;
+            border-style: solid;
+            border-radius: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .submit {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="userDetails">
+        <h3>Student-Information</h3>
+        <table aria-describedby="mydesc" class="table">
+            <tr>
+                <th scope="col">
+                    <label>First Name</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="firstName" value="">
+                </td>
+                <th scope="col">
+                    <label>Last Name</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="lastName" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Father Name</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="fatherName" value="">
+                </td>
+                <th scope="col">
+                    <label>Mother Name</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="motherName" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Date Of Birth</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="DOB" value="">
+                </td>
+                <th scope="col">
+                    <label>Gender</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="gender" value="" readonly>
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Communicatio-Address</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="communicationAddress" value="">
+                </td>
+                <th scope="col">
+                    <label>Permanent-Address</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="permanentAddress" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>State</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="state" value="">
+                </td>
+                <th scope="col">
+                    <label>District</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="district" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Religion</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="religion" value="" readonly>
+                </td>
+                <th scope="col">
+                    <label>Community</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="community" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Aadhar Number</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="aadharNumber" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Exam Passed</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="qualifiedExam" value="">
+                </td>
+                <th scope="col"><label>Medium</label></th>
+                <td>
+                    <input type="text" onchange="editname()" id="medium" value="">
+                </td>
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Name of Examination Board</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="examinationBoard" value="">
+                </td>
+                <th scope="col">
+                    <label>HSC Maximum Marks</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="hscMaxMark" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Year Of Passing</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="yop" value="">
+                </td>
+                <th scope="col">
+                    <label>HSC Marks Obtained</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="hscTotalMark" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Register Number</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="registerNumber" value="">
+                </td>
+                <th scope="col">
+                    <label>SSLC Total Marks</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="sslcMaxMark" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Group Code</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="groupCode" value="">
+                </td>
+                <th scope="col">
+                    <label>SSLC Marks Obtained</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="sslcTotalMark" value="">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Choosed Branch</label>
+                </th>
+                <td>
+                    <input type="text" onchange="editname()" id="branch" value="">
+                </td>
+            </tr>
+        </table>
+        <div class="submit">
+            <input type="button" id="submit" onclick="alert('go to academic page')"
+                value="Update">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" id="submit" onclick="alert('Go to payment Page')" value="Continue&Next">
+        </div>
+</body>
+
+</html>
+
+<script>
+
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    let reg = JSON.parse(localStorage.getItem('regform'));
+
+    console.log(userData);
+    console.log(reg);
+
+    const firstName = document.querySelector("#firstName").value = userData.firstName;
+    const lastName = document.querySelector("#lastName").value = userData.lastName;
+    const fatherName = document.querySelector("#fatherName").value = userData.fatherName;
+    const motherName = document.querySelector("#motherName").value = userData.motherName;
+    const DOB = document.querySelector("#DOB").value = userData.DOB;
+    const gender = document.querySelector("#gender").value = userData.gender;
+    const communicationAddress = document.querySelector("#communicationAddress").value = userData.communicationAddress;
+    const permanentAddress = document.querySelector("#permanentAddress").value = userData.permanentAddress;
+    const state = document.querySelector("#state").value = userData.state;
+    const district = document.querySelector("#district").value = userData.district;
+    const religion = document.querySelector("#religion").value = userData.religion;
+    const community = document.querySelector("#community").value = userData.community;
+    const aadharNumber = document.querySelector("#aadharNumber").value = userData.aadharNumber;
+
+
+
+    const exam = document.querySelector("#qualifiedExam").value = reg.Qualified_Exam;
+    const examBoard = document.querySelector("#examinationBoard").value = reg.Examination_Board;
+    const yop = document.querySelector("#yop").value = reg.YOP;
+    const registerNumber = document.querySelector("#registerNumber").value = reg.Register_Number;
+    const groupCode = document.querySelector("#groupCode").value = reg.Group_Code;
+    const medium = document.querySelector("#medium").value = reg.Medium;
+    const hscMaxMark = document.querySelector("#hscMaxMark").value = reg.HSC_Max_Marks;
+    const hscTotalMark = document.querySelector("#hscTotalMark").value = reg.HSC_Total_Marks;
+    const sslcMaxMark = document.querySelector("#sslcMaxMark").value = reg.SSLC_Max_Marks;
+    const sslcTotalMark = document.querySelector("#sslcTotalMark").value = reg.SSLC_Total_Marks;
+    const branch = document.querySelector("#branch").value = reg.Branch;
+</script>
+
+<script>
+    function editname() {
+        let studentFirstName = document.querySelector("#firstName").value;
+        let studentLastName = document.querySelector("#lastName").value;
+        let studentFatherName = document.querySelector("#fatherName").value;
+        let studentMotherName = document.querySelector("#motherName").value;
+        let studentDOB = document.querySelector("#DOB").value;
+        let studentGender = document.querySelector("#gender").value;
+        let studentCommunicationAddress = document.querySelector("#communicationAddress").value;
+        let studentPermanentAddress = document.querySelector("#permanentAddress").value;
+        let studentState = document.querySelector("#state").value;
+        let studentDistrict = document.querySelector("#district").value;
+        let studentReligion = document.querySelector("#religion").value;
+        let studentCommunity = document.querySelector("#community").value;
+        let studentAadharNumber = document.querySelector("#aadharNumber").value;
+
+        let studentExam = document.querySelector("#qualifiedExam").value;
+        let studentExamBoard = document.querySelector("#examinationBoard").value;
+        let studentYOP = document.querySelector("#yop").value;
+        let studentRegNo = document.querySelector("#registerNumber").value;
+        let studentGroupCode = document.querySelector("#groupCode").value;
+        let studentMedium = document.querySelector("#medium").value;
+        let studentHSCMaxMark = document.querySelector("#hscMaxMark").value;
+        let studentHSCTotalMark = document.querySelector("#hscTotalMark").value;
+        let studentSSLCMaxMark = document.querySelector("#sslcMaxMark").value;
+        let studentSSLCTotalMark = document.querySelector("#sslcTotalMark").value;
+        let studentBranch = document.querySelector("#branch").value;
+
+        let studentObj = {
+            "firstName": studentFirstName,
+            "lastName": studentLastName,
+            "fatherName": studentFatherName,
+            "motherName": studentMotherName,
+            "DOB": studentDOB,
+            "gender": studentGender,
+            "aadharNumber": studentAadharNumber
+        }
+        console.log(studentObj);
+    }
+</script>

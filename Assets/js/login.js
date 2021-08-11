@@ -20,9 +20,11 @@ function login() {
             username: userName,
             password: password
         }
+        console.log("mani bro");
         axios.post(url, formData).then(res => {
             let data = res.data;
             console.log(data);
+            console.log("mani-2 bro");
             alert("Login Successful");
             window.location.href = "personalinfo.html";
         }).catch(err => {
