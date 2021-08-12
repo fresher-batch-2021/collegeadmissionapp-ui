@@ -1,14 +1,14 @@
 function personal() {
     event.preventDefault();
-    const firstName = document.querySelector("#first_name").value;
-    const lastName = document.querySelector("#last_name").value;
-    const fatherName = document.querySelector("#father_name").value;
-    const motherName = document.querySelector("#mother_name").value;
+    const firstName = document.querySelector("#firstName").value;
+    const lastName = document.querySelector("#lastName").value;
+    const fatherName = document.querySelector("#fatherName").value;
+    const motherName = document.querySelector("#motherName").value;
     const gender = document.querySelector("#gender").value;
     const dob = document.querySelector("#dob").value;
     const state = document.querySelector("#state").value;
-    const communicationAddress = document.querySelector("#addr_1").value;
-    const permanentAddress = document.querySelector("#addr_2").value;
+    const communicationAddress = document.querySelector("#communicationAddress").value;
+    const permanentAddress = document.querySelector("#permanentAddress").value;
     const district = document.querySelector("#district").value;
     const religion = document.querySelector("#religion").value;
     const community = document.querySelector("#community").value;
@@ -73,8 +73,8 @@ function personal() {
 }
 
 function address() {
-    const permanentaddress1 = document.getElementById("addr_1").value;
-    document.getElementById("addr_2").innerHTML = permanentaddress1;
+    const permanentaddress1 = document.getElementById("communicationAddress").value;
+    document.getElementById("permanentAddress").innerHTML = permanentaddress1;
 }
 
 function show1() {

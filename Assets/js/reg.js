@@ -1,7 +1,7 @@
 function register() {
     event.preventDefault();
-    const candidatename = document.querySelector("#candidateName").value;
-    const mobile = document.querySelector("#contactNumber").value;
+    const candidateName = document.querySelector("#candidateName").value;
+    const mobileNumber = document.querySelector("#contactNumber").value;
     const dob = document.querySelector("#dob").value;
     const email = document.querySelector("#email").value;
     const userName = document.querySelector("#userName").value;
@@ -10,7 +10,7 @@ function register() {
 
     let url = "https://product-mock-api.herokuapp.com/collegeadmissionapp/api/v1/auth/register";
     let formData = {
-        name: candidatename,
+        name: candidateName,
         username: userName,
         dob: dob,
         email: email,
@@ -18,36 +18,30 @@ function register() {
         password: userPassword,
     }
 
-    if (candidatename == "" || candidatename == null || candidatename.trim() == "" || candidatename == undefined) {
+    if (candidateName == "" || candidateName == null || candidateName.trim() == "") {
         alert("Candidatename Cannot be Blank");
         return false;
-    } else if (mobile == "" || mobile == null || mobile == undefined) {
+    } else if (mobileNumber == "" || mobileNumber == null) {
         alert("Mobile Number Cannot be Blank");
         return false;
     } else if (dob == "") {
         alert("DOB Cannot be Blank");
         return false;
-    } else if (email == "" || email == null || email == undefined) {
+    } else if (email == "" || email == null) {
         alert("Email Cannot be Blank");
         return false;
-    } else if (userName == "" || userName == null || userName == undefined) {
+    } else if (userName == "" || userName == null) {
         alert("UserName Cannot be Blank");
         return false;
-    } else if (userPassword == "") {
-        alert("UserPassword Cannot be Blank");
-        return false;
-    } else if (userPassword.length < 8 || userPassword.length > 15) {
-        alert("UserPassword must be greater than >8 characters & less than 15 characters ");
+    } else if (userPassword == "" || userPassword.length < 8 || userPassword.length > 15) {
+        alert("UserPassword contain atleast 8 Characters");
         return false;
     }
-    else if (confirmPassword == "") {
-        alert("ConfirmPassword Cannot be Blank");
+    else if (confirmPassword == "" || confirmPassword.length < 8 || confirmPassword.length > 15) {
+        alert("ConfirmPassword contain atleast 8 Characters");
         return false;
     }
-    else if (confirmPassword.length < 8 || confirmPassword.length > 15) {
-        alert("ConfirmPassword must be greater than >8 characters & less than 15 characters ");
-        return false;
-    } else if (userPassword != confirmPassword) {
+    else if (userPassword != confirmPassword) {
         alert("Password does not match with ConfirmPassword");
         return false;
     } else {

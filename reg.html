@@ -34,7 +34,7 @@
                     </th>
 
                     <td>
-                        <input type="tel" id="contactNumber" placeholder="Mobile number" minlength="10" maxlength="10"
+                        <input type="tel" id="contactNumber" placeholder="Mobile number" pattern="[789][0-9]{9}"
                             required autocomplete="off">
                     </td>
                 </tr>
@@ -51,7 +51,8 @@
                         <label>Email-ID</label>
                     </th>
                     <td>
-                        <input type="email" id="email" placeholder="Email-ID" required autocomplete="off">
+                        <input type="email" id="email" placeholder="Email-ID"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required autocomplete="off">
                     </td>
                 </tr>
                 <tr>
@@ -68,8 +69,8 @@
                         <label>Password</label>
                     </th>
                     <td>
-                        <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password" required
-                            autocomplete="off">
+                        <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password"
+                            required autocomplete="off">
                     </td>
                 </tr>
                 <tr>
@@ -77,15 +78,15 @@
                         <label>Confirm Password</label>
                     </th>
                     <td>
-                        <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password" minlength="8"
-                            required autocomplete="off">
+                        <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password"
+                            minlength="8" required autocomplete="off">
                     </td>
                 </tr>
             </table>
 
             <div class="buttons">
                 <input type="reset" id="reset" value="Reset">&nbsp;&nbsp;&nbsp;
-                <input type="Submit" id="submit" value="Submit" onload="alert('Please Check the filled Details are correct or not')">
+                <input type="Submit" id="submit" value="Submit">
             </div>
 
 

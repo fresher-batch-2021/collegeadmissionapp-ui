@@ -3,11 +3,11 @@ function login() {
     const userName = document.querySelector("#userName").value;
     const password = document.querySelector("#password").value;
 
-    if (userName == "" || userName == null || userName.trim() == "" || userName == undefined) {
-        alert("Invalid Username");
+    if (userName == "" || userName == null) {
+        alert("Username cannot be blank");
         return false;
-    } else if (password == "" || password == null || password.trim() == "" || password == undefined) {
-        alert("Invalid Password");
+    } else if (password == "" || password == null || password.trim() == "") {
+        alert("Password cannot be blank");
         return false;
     } else {
         let userObj = {
@@ -20,11 +20,9 @@ function login() {
             username: userName,
             password: password
         }
-        console.log("mani bro");
         axios.post(url, formData).then(res => {
             let data = res.data;
             console.log(data);
-            console.log("mani-2 bro");
             alert("Login Successful");
             window.location.href = "personalinfo.html";
         }).catch(err => {

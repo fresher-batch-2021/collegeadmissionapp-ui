@@ -11,283 +11,287 @@
 </head>
 
 <body>
-    <div class="userDetails">
-        <form action="preview.html" onsubmit="editApplication()">
-            <h3>Student-Information</h3>
-            <table aria-describedby="mydesc" class="table">
-                <tr>
-                    <th scope="col">
-                        <label>First Name</label>
-                    </th>
-                    <td>
-                        <input type="text" id="firstName" value="">
-                    </td>
-                    <th scope="col">
-                        <label>Last Name</label>
-                    </th>
-                    <td>
-                        <input type="text" id="lastName" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Father Name</label>
-                    </th>
-                    <td>
-                        <input type="text" id="fatherName" value="">
-                    </td>
-                    <th scope="col">
-                        <label>Mother Name</label>
-                    </th>
-                    <td>
-                        <input type="text" id="motherName" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Date Of Birth</label>
-                    </th>
-                    <td>
-                        <input type="text" id="DOB" value="">
-                    </td>
-                    <th scope="col">
-                        <label>Gender</label>
-                    </th>
-                    <td>
-                        <input type="text" id="gender" value="" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Communicatio-Address</label>
-                    </th>
-                    <td>
-                        <input type="text" id="communicationAddress" value="">
-                    </td>
-                    <th scope="col">
-                        <label>Permanent-Address</label>
-                    </th>
-                    <td>
-                        <input type="text" id="permanentAddress" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>State</label>
-                    </th>
-                    <td>
-                        <input type="text" id="state" value="">
-                    </td>
-                    <th scope="col">
-                        <label>District</label>
-                    </th>
-                    <td>
-                        <input type="text" id="district" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Religion</label>
-                    </th>
-                    <td>
-                        <input type="text" id="religion" value="" readonly>
-                    </td>
-                    <th scope="col">
-                        <label>Community</label>
-                    </th>
-                    <td>
-                        <input type="text" id="community" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Aadhar Number</label>
-                    </th>
-                    <td>
-                        <input type="text" id="aadharNumber" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Exam Passed</label>
-                    </th>
-                    <td>
-                        <input type="text" id="qualifiedExam" value="">
-                    </td>
-                    <th scope="col"><label>Medium</label></th>
-                    <td>
-                        <input type="text" id="medium" value="">
-                    </td>
+    <header id="header"></header>
+    <main>
+        <div class="userDetails">
+            <form action="preview.html" onsubmit="editApplication()">
+                <h3>Student-Information</h3>
+                <table aria-describedby="mydesc" class="table">
+                    <tr>
+                        <th scope="col">
+                            <label>First Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="firstName" value="">
+                        </td>
+                        <th scope="col">
+                            <label>Last Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="lastName" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Father Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="fatherName" value="">
+                        </td>
+                        <th scope="col">
+                            <label>Mother Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="motherName" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Date Of Birth</label>
+                        </th>
+                        <td>
+                            <input type="text" id="DOB" value="">
+                        </td>
+                        <th scope="col">
+                            <label>Gender</label>
+                        </th>
+                        <td>
+                            <input type="text" id="gender" value="" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Communicatio-Address</label>
+                        </th>
+                        <td>
+                            <input type="text" id="communicationAddress" value="">
+                        </td>
+                        <th scope="col">
+                            <label>Permanent-Address</label>
+                        </th>
+                        <td>
+                            <input type="text" id="permanentAddress" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>State</label>
+                        </th>
+                        <td>
+                            <input type="text" id="state" value="">
+                        </td>
+                        <th scope="col">
+                            <label>District</label>
+                        </th>
+                        <td>
+                            <input type="text" id="district" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Religion</label>
+                        </th>
+                        <td>
+                            <input type="text" id="religion" value="" readonly>
+                        </td>
+                        <th scope="col">
+                            <label>Community</label>
+                        </th>
+                        <td>
+                            <input type="text" id="community" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Aadhar Number</label>
+                        </th>
+                        <td>
+                            <input type="text" id="aadharNumber" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Exam Passed</label>
+                        </th>
+                        <td>
+                            <input type="text" id="qualifiedExam" value="">
+                        </td>
+                        <th scope="col"><label>Medium</label></th>
+                        <td>
+                            <input type="text" id="medium" value="">
+                        </td>
 
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Name of Examination Board</label>
-                    </th>
-                    <td>
-                        <input type="text" id="examinationBoard" value="">
-                    </td>
-                    <th scope="col">
-                        <label>HSC Maximum Marks</label>
-                    </th>
-                    <td>
-                        <input type="text" id="hscMaxMark" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Year Of Passing</label>
-                    </th>
-                    <td>
-                        <input type="text" id="yop" value="">
-                    </td>
-                    <th scope="col">
-                        <label>HSC Marks Obtained</label>
-                    </th>
-                    <td>
-                        <input type="text" id="hscTotalMark" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Register Number</label>
-                    </th>
-                    <td>
-                        <input type="text" id="registerNumber" value="">
-                    </td>
-                    <th scope="col">
-                        <label>SSLC Total Marks</label>
-                    </th>
-                    <td>
-                        <input type="text" id="sslcMaxMark" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Group Code</label>
-                    </th>
-                    <td>
-                        <input type="text" id="groupCode" value="">
-                    </td>
-                    <th scope="col">
-                        <label>SSLC Marks Obtained</label>
-                    </th>
-                    <td>
-                        <input type="text" id="sslcTotalMark" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Choosed Branch</label>
-                    </th>
-                    <td>
-                        <input type="text" id="branch" value="">
-                    </td>
-                </tr>
-            </table>
-            <div class="submit">
-                <input type="submit" id="submit" value="Update">
-            </div>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Name of Examination Board</label>
+                        </th>
+                        <td>
+                            <input type="text" id="examinationBoard" value="">
+                        </td>
+                        <th scope="col">
+                            <label>HSC Maximum Marks</label>
+                        </th>
+                        <td>
+                            <input type="text" id="hscMaxMark" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Year Of Passing</label>
+                        </th>
+                        <td>
+                            <input type="text" id="yop" value="">
+                        </td>
+                        <th scope="col">
+                            <label>HSC Marks Obtained</label>
+                        </th>
+                        <td>
+                            <input type="text" id="hscTotalMark" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Register Number</label>
+                        </th>
+                        <td>
+                            <input type="text" id="registerNumber" value="">
+                        </td>
+                        <th scope="col">
+                            <label>SSLC Total Marks</label>
+                        </th>
+                        <td>
+                            <input type="text" id="sslcMaxMark" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Group Code</label>
+                        </th>
+                        <td>
+                            <input type="text" id="groupCode" value="">
+                        </td>
+                        <th scope="col">
+                            <label>SSLC Marks Obtained</label>
+                        </th>
+                        <td>
+                            <input type="text" id="sslcTotalMark" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Choosed Branch</label>
+                        </th>
+                        <td>
+                            <input type="text" id="branch" value="">
+                        </td>
+                    </tr>
+                </table>
+                <div class="submit">
+                    <input type="submit" id="submit" value="Update">
+                </div>
 
-        </form>
-    </div>
+            </form>
+        </div>
+    </main>
+    <script>
+
+        let userData = JSON.parse(localStorage.getItem('userData'));
+        let reg = JSON.parse(localStorage.getItem('regform'));
+
+        console.log(userData);
+        console.log(reg);
+
+        const firstName = document.querySelector("#firstName").value = userData.firstName;
+        const lastName = document.querySelector("#lastName").value = userData.lastName;
+        const fatherName = document.querySelector("#fatherName").value = userData.fatherName;
+        const motherName = document.querySelector("#motherName").value = userData.motherName;
+        const DOB = document.querySelector("#DOB").value = userData.DOB;
+        const gender = document.querySelector("#gender").value = userData.gender;
+        const communicationAddress = document.querySelector("#communicationAddress").value = userData.communicationAddress;
+        const permanentAddress = document.querySelector("#permanentAddress").value = userData.permanentAddress;
+        const state = document.querySelector("#state").value = userData.state;
+        const district = document.querySelector("#district").value = userData.district;
+        const religion = document.querySelector("#religion").value = userData.religion;
+        const community = document.querySelector("#community").value = userData.community;
+        const aadharNumber = document.querySelector("#aadharNumber").value = userData.aadharNumber;
+
+
+
+        const exam = document.querySelector("#qualifiedExam").value = reg.qualifiedExam;
+        const examBoard = document.querySelector("#examinationBoard").value = reg.examinationBoard;
+        const yop = document.querySelector("#yop").value = reg.yearofPassing;
+        const registerNumber = document.querySelector("#registerNumber").value = reg.registerNumber;
+        const groupCode = document.querySelector("#groupCode").value = reg.groupCode;
+        const medium = document.querySelector("#medium").value = reg.medium;
+        const hscMaxMark = document.querySelector("#hscMaxMark").value = reg.hscMaxMark;
+        const hscTotalMark = document.querySelector("#hscTotalMark").value = reg.hscTotalMark;
+        const sslcMaxMark = document.querySelector("#sslcMaxMark").value = reg.sslcMaxMark;
+        const sslcTotalMark = document.querySelector("#sslcTotalMark").value = reg.sslcTotalMark;
+        const branch = document.querySelector("#branch").value = reg.branch;
+
+        function editApplication() {
+            let studentFirstName = document.querySelector("#firstName").value;
+            let studentLastName = document.querySelector("#lastName").value;
+            let studentFatherName = document.querySelector("#fatherName").value;
+            let studentMotherName = document.querySelector("#motherName").value;
+            let studentDOB = document.querySelector("#DOB").value;
+            let studentGender = document.querySelector("#gender").value;
+            let studentCommunicationAddress = document.querySelector("#communicationAddress").value;
+            let studentPermanentAddress = document.querySelector("#permanentAddress").value;
+            let studentState = document.querySelector("#state").value;
+            let studentDistrict = document.querySelector("#district").value;
+            let studentReligion = document.querySelector("#religion").value;
+            let studentCommunity = document.querySelector("#community").value;
+            let studentAadharNumber = document.querySelector("#aadharNumber").value;
+
+            let studentExam = document.querySelector("#qualifiedExam").value;
+            let studentExamBoard = document.querySelector("#examinationBoard").value;
+            let studentYOP = document.querySelector("#yop").value;
+            let studentRegNo = document.querySelector("#registerNumber").value;
+            let studentGroupCode = document.querySelector("#groupCode").value;
+            let studentMedium = document.querySelector("#medium").value;
+            let studentHSCMaxMark = document.querySelector("#hscMaxMark").value;
+            let studentHSCTotalMark = document.querySelector("#hscTotalMark").value;
+            let studentSSLCMaxMark = document.querySelector("#sslcMaxMark").value;
+            let studentSSLCTotalMark = document.querySelector("#sslcTotalMark").value;
+            let studentBranch = document.querySelector("#branch").value;
+
+            let studentObj = {
+                "firstName": studentFirstName,
+                "lastName": studentLastName,
+                "fatherName": studentFatherName,
+                "motherName": studentMotherName,
+                "DOB": studentDOB,
+                "gender": studentGender,
+                "communicationAddress": studentCommunicationAddress,
+                "permanentAddress": studentPermanentAddress,
+                "state": studentState,
+                "district": studentDistrict,
+                "religion": studentReligion,
+                "community": studentCommunity,
+                "aadharNumber": studentAadharNumber,
+                "qualifiedExam": studentExam,
+                "examinationBoard": studentExamBoard,
+                "yearofPassing": studentYOP,
+                "registerNumber": studentRegNo,
+                "groupCode": studentGroupCode,
+                "medium": studentMedium,
+                "hscMaxMark": studentHSCMaxMark,
+                "hscTotalMark": studentHSCTotalMark,
+                "sslcMaxMark": studentSSLCMaxMark,
+                "sslcTotalMark": studentSSLCTotalMark,
+                "branch": studentBranch
+            }
+            console.log(studentObj);
+            localStorage.setItem('editform', JSON.stringify(studentObj));
+            window.location.href = "preview.html";
+        }
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $("#header").load("header3.html");
+    </script>
 </body>
 
 </html>
-
-<script>
-
-    let userData = JSON.parse(localStorage.getItem('userData'));
-    let reg = JSON.parse(localStorage.getItem('regform'));
-
-    console.log(userData);
-    console.log(reg);
-
-    const firstName = document.querySelector("#firstName").value = userData.firstName;
-    const lastName = document.querySelector("#lastName").value = userData.lastName;
-    const fatherName = document.querySelector("#fatherName").value = userData.fatherName;
-    const motherName = document.querySelector("#motherName").value = userData.motherName;
-    const DOB = document.querySelector("#DOB").value = userData.DOB;
-    const gender = document.querySelector("#gender").value = userData.gender;
-    const communicationAddress = document.querySelector("#communicationAddress").value = userData.communicationAddress;
-    const permanentAddress = document.querySelector("#permanentAddress").value = userData.permanentAddress;
-    const state = document.querySelector("#state").value = userData.state;
-    const district = document.querySelector("#district").value = userData.district;
-    const religion = document.querySelector("#religion").value = userData.religion;
-    const community = document.querySelector("#community").value = userData.community;
-    const aadharNumber = document.querySelector("#aadharNumber").value = userData.aadharNumber;
-
-
-
-    const exam = document.querySelector("#qualifiedExam").value = reg.qualifiedExam;
-    const examBoard = document.querySelector("#examinationBoard").value = reg.examinationBoard;
-    const yop = document.querySelector("#yop").value = reg.yearofPassing;
-    const registerNumber = document.querySelector("#registerNumber").value = reg.registerNumber;
-    const groupCode = document.querySelector("#groupCode").value = reg.groupCode;
-    const medium = document.querySelector("#medium").value = reg.medium;
-    const hscMaxMark = document.querySelector("#hscMaxMark").value = reg.hscMaxMark;
-    const hscTotalMark = document.querySelector("#hscTotalMark").value = reg.hscTotalMark;
-    const sslcMaxMark = document.querySelector("#sslcMaxMark").value = reg.sslcMaxMark;
-    const sslcTotalMark = document.querySelector("#sslcTotalMark").value = reg.sslcTotalMark;
-    const branch = document.querySelector("#branch").value = reg.branch;
-</script>
-
-<script>
-    function editApplication() {
-        let studentFirstName = document.querySelector("#firstName").value;
-        let studentLastName = document.querySelector("#lastName").value;
-        let studentFatherName = document.querySelector("#fatherName").value;
-        let studentMotherName = document.querySelector("#motherName").value;
-        let studentDOB = document.querySelector("#DOB").value;
-        let studentGender = document.querySelector("#gender").value;
-        let studentCommunicationAddress = document.querySelector("#communicationAddress").value;
-        let studentPermanentAddress = document.querySelector("#permanentAddress").value;
-        let studentState = document.querySelector("#state").value;
-        let studentDistrict = document.querySelector("#district").value;
-        let studentReligion = document.querySelector("#religion").value;
-        let studentCommunity = document.querySelector("#community").value;
-        let studentAadharNumber = document.querySelector("#aadharNumber").value;
-
-        let studentExam = document.querySelector("#qualifiedExam").value;
-        let studentExamBoard = document.querySelector("#examinationBoard").value;
-        let studentYOP = document.querySelector("#yop").value;
-        let studentRegNo = document.querySelector("#registerNumber").value;
-        let studentGroupCode = document.querySelector("#groupCode").value;
-        let studentMedium = document.querySelector("#medium").value;
-        let studentHSCMaxMark = document.querySelector("#hscMaxMark").value;
-        let studentHSCTotalMark = document.querySelector("#hscTotalMark").value;
-        let studentSSLCMaxMark = document.querySelector("#sslcMaxMark").value;
-        let studentSSLCTotalMark = document.querySelector("#sslcTotalMark").value;
-        let studentBranch = document.querySelector("#branch").value;
-
-        let studentObj = {
-            "firstName": studentFirstName,
-            "lastName": studentLastName,
-            "fatherName": studentFatherName,
-            "motherName": studentMotherName,
-            "DOB": studentDOB,
-            "gender": studentGender,
-            "communicationAddress": studentCommunicationAddress,
-            "permanentAddress": studentPermanentAddress,
-            "state": studentState,
-            "district": studentDistrict,
-            "community": studentCommunity,
-            "aadharNumber": studentAadharNumber,
-            "qualifiedExam": studentExam,
-            "examinationBoard": studentExamBoard,
-            "yearofPassing": studentYOP,
-            "registerNumber": studentRegNo,
-            "groupCode": studentGroupCode,
-            "medium": studentMedium,
-            "hscMaxMark": studentHSCMaxMark,
-            "hscTotalMark": studentHSCTotalMark,
-            "sslcMaxMark": studentSSLCMaxMark,
-            "sslcTotalMark": studentSSLCTotalMark,
-            "branch": studentBranch
-        }
-        console.log(studentObj);
-        localStorage.setItem('editform', JSON.stringify(studentObj));
-        window.location.href = "preview.html";
-    }
-
-</script>
