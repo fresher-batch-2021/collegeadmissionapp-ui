@@ -24,6 +24,7 @@ function login() {
             let data = res.data;
             console.log(data);
             alert("Login Successful");
+            localStorage.setItem('userName', JSON.stringify(userObj));
             window.location.href = "personalinfo.html";
         }).catch(err => {
             let errorMessage = err.response.data.errorMessage;

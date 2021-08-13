@@ -7,21 +7,20 @@ function register() {
     const userName = document.querySelector("#userName").value;
     const userPassword = document.querySelector("#userPassword").value;
     const confirmPassword = document.querySelector("#confirmPassword").value;
-
     let url = "https://product-mock-api.herokuapp.com/collegeadmissionapp/api/v1/auth/register";
     let formData = {
         name: candidateName,
         username: userName,
         dob: dob,
         email: email,
-        contactNo: mobile,
+        contactNo: mobileNumber,
         password: userPassword,
     }
 
     if (candidateName == "" || candidateName == null || candidateName.trim() == "") {
         alert("Candidatename Cannot be Blank");
         return false;
-    } else if (mobileNumber == "" || mobileNumber == null) {
+    } else if (mobileNumber == "" || mobileNumber == null || mobileNumber.length!=10) {
         alert("Mobile Number Cannot be Blank");
         return false;
     } else if (dob == "") {
@@ -45,6 +44,7 @@ function register() {
         alert("Password does not match with ConfirmPassword");
         return false;
     } else {
+
         axios.post(url, formData).then(res => {
             let data = res.data;
             console.log(data);

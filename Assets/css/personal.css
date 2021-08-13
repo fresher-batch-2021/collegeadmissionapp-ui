@@ -17,6 +17,11 @@ h1 {
     text-align: center;
     text-decoration: underline;
 }
+strong{
+    margin-right: 5%;
+   float: right;
+   font-size: 30px;
+}
 
 .table {
     width: 850px;
