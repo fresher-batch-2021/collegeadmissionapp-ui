@@ -24,27 +24,8 @@ aside {
     background: rgba(255, 255, 255, 0.39);
 }
 
-fieldset {
-    border-radius: 10px;
-    width: 330px;
-    margin-left: 25px;
-    margin-right: 25px;
+aside .eventTable{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-legend{
-    text-align: center;
-}
-
-marquee {
-    margin-top: 20px;
-}
-
-h3 {
-    margin-top: 20px;
-    text-align: center;
-}
-
-p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-

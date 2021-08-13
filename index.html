@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homepage</title>
     <link rel="stylesheet" href="Assets/css/index.css">
-    <script src="index.js"></script>
+   
 </head>
 
 <body>
@@ -15,46 +15,47 @@
     <main>
         <aside>
             <h2>News and Events</h2>
-            <marquee width="90%" direction="up" onmouseover="this.stop()" onmouseout="this.start()" height="250px">
-                <fieldset>
-                    <legend>Covid-19</legend>
-                    <h3><a href="#" style="text-decoration: none;">Covid-19 Vaccine Camp</a></h3>
-                    <br>
-                    <p>15th-31st August-2021</p>
-                    <br>
-                    <button>Register now</button>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>AFDP</legend>
-                    <h3><a href="#" style="text-decoration: none; ">ATAL FACULTY DEVELOPMENT PROGRAM</a></h3>
-                    <br>
-                    <p>5th-10th August-2021</p>
-                    <br>
-                    <p>
-                        Conducted by Department of CSE.
-                    </p>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>TimeTable</legend>
-                    <h3><a href="#" style="text-decoration: none;">Exam Timetable</a></h3>
-                    <br>
-                    <p>IV/VI SEM B.E/B.TECH/M.TECH(Regular)</p>
-                    <br>
-                    <button>View now</button>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>Conference</legend>
-                    <h3> <a href="#" style="text-decoration: none;">ICREAT-2021</a></h3>
-                    <br>
-                    <p>Conducted By Department of EEE/ECE/E&I</p>
-                    <br>
-                    <button>Register Here</button>
-                </fieldset>
-            </marquee>
+            <table border="1" aria-describedby="mydesc" class="eventTable">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Event Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks-table"></tbody>
+            </table>
         </aside>
+        <script>
+            function displayTasks() {
+                let tasks = [
+                    {
+                        id: 1,
+                        eventName: "Interview",
+                        date: "17-08-2021",
+                        time: "10.00-AM",
+                        action: "Apply"
+                    },
+                    {
+                        id: 2,
+                        eventName: "Conference",
+                        date: "21-08-2021",
+                        time: "11.00-AM",
+                        action: "Apply"
+                    }
+                ];
+                let content = "";
+                for (let taskObj of tasks) {
+                    content = content + `<tr><td>${taskObj.id}</td><td>${taskObj.eventName}</td><td>${taskObj.date}
+                        </td><td>${taskObj.time}</td><td>${taskObj.action}</td></tr>`;
+                }
+                console.log(content);
+                document.querySelector("#tasks-table").innerHTML = content;
+            }
+            displayTasks();
+        </script>
         <script src="assets/js/jquery.min.js"></script>
         <script>
             $("#header").load("_header.html");

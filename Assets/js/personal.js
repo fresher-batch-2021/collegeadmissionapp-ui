@@ -15,39 +15,39 @@ function personal() {
     const aadhar = document.querySelector("#aadhar").value;
 
     if (firstName == "" || firstName.trim() == "") {
-        alert("Invalid Name");
+        alert("FirstName cannot be blank");
         return false;
     } else if (lastName == "" || lastName.trim() == "") {
-        alert("Invalid LastName");
+        alert("LastName cannot be blank");
         return false;
     } else if (fatherName == "") {
-        alert("Invalid Father name");
+        alert("Fathername cannot be blank");
         return false;
     } else if (motherName == "") {
-        alert("Invalid MotherName");
+        alert("MotherName cannot be blank");
         return false;
     } else if (dob == "") {
-        alert("Invalid DateOfBirth");
+        alert("DateOfBirth cannot be blank");
         return false;
     } else if (gender == "") {
-        alert("Invalid Gender");
+        alert("Gender cannot be blank");
         return false;
     } else if (state == "") {
-        alert("Invalid state");
+        alert("State cannot be blank");
     } else if (communicationAddress == "") {
-        alert("Invalid Communication Address");
+        alert("Communication Address cannot be blank");
         return false;
     } else if (permanentAddress == "") {
-        alert("Invalid Permanent Address");
+        alert("Permanent Address cannot be blank");
         return false;
     } else if (district == "") {
-        alert("Invalid District");
+        alert("District cannot be blank");
         return false;
     } else if (religion == "") {
-        alert("Invalid Religion");
+        alert("Religion cannot be blank");
         return false;
     } else if (aadhar.length != 12) {
-        alert("Invalid Aadhar Number");
+        alert("Aadhar number contain 12digit numbers");
         return false;
     } else {
         alert("Registration Successful");
@@ -77,16 +77,4 @@ function address() {
     document.getElementById("permanentAddress").innerHTML = permanentaddress1;
 }
 
-function show1() {
-    document.getElementById('div1').style.display = 'none';
-}
-function show2() {
-    document.getElementById('div1').style.display = 'block';
-}
-function show3() {
-    document.getElementById('div2').style.display = 'none';
-}
-function show4() {
-    document.getElementById('div2').style.display = 'block';
-}
 
