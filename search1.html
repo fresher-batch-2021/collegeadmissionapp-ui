@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+            margin-top: 20px;
+            background-color: blue;
+        }
+
+        .searchBar {
+            margin: auto;
+            margin-top: 100px;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        .myInput {
+            margin-left: 100px;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 30%;
+            background: #f1f1f1;
+        }
+
+        .searchBar table {
+            margin: auto;
+            width: 80%;
+            margin-top: 10%;
+        }
+
+        .searchBar select {
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 10%;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="searchBar">
+        <form action="">
+            <h1>View-Application</h1>
+            <input type="text " id="myInput" class="myInput" placeholder="search for dept.." onkeyup="searchFun()"
+                autocomplete="off">
+            <select>
+                <option>Dept</option>
+                <option>Percentage</option>
+            </select>
+            <table border="1" id="myTable">
+                <tr class="header">
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Percentage</th>
+                    <th>Address</th>
+                    <th>contactNumber</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Mani</td>
+                    <td>EEE</td>
+                    <td>67</td>
+                    <td>Salem</td>
+                    <td>8765432189</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ravi</td>
+                    <td>ECE</td>
+                    <td>75</td>
+                    <td>Dharmapuri</td>
+                    <td>8765892189</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ganesh</td>
+                    <td>CSE</td>
+                    <td>60</td>
+                    <td>Erode</td>
+                    <td>8766732189</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Rajesh</td>
+                    <td>CSE</td>
+                    <td>80</td>
+                    <td>Chennai</td>
+                    <td>8700732189</td>
+                </tr>
+            </table>
+    </div>
+    </form>
+
+    <script>
+        function searchFun() {
+            let searchInput = document.getElementById("myInput").value.toUpperCase();
+            let myTable = document.getElementById("myTable");
+            let tableRow = myTable.getElementsByTagName("tr");
+            for (var i = 0; i < tableRow.length; i++) {
+                let tableData = tableRow[i].getElementsByTagName("td")[2];
+                if (tableData) {
+                    let textValue = tableData.textContent || tableData.innerText;
+                    if (textValue.toUpperCase().indexOf(searchInput) > -1) {
+                        tableRow[i].style.display = "";
+                    } else {
+                        tableRow[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

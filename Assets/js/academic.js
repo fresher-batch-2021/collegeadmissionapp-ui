@@ -8,6 +8,7 @@ function academic() {
     const medium = document.querySelector("#medium").value;
     const hscMaxMark = document.querySelector("#mark1").value;
     const hscTotalMark = document.querySelector("#mark2").value;
+    const cutOffMark = document.querySelector("#mark5").value;
     const sslcMaxMark = document.querySelector("#mark3").value;
     const sslcTotalMark = document.querySelector("#mark4").value;
     const branch = document.querySelector("#branch").value;
@@ -20,28 +21,31 @@ function academic() {
     } else if (regno.length != 6) {
         alert("Invalid REGNO");
         return false;
-    } else if (yearOfPassing == "" ) {
+    } else if (yearOfPassing == "") {
         alert("Invalid Year Of Passing");
         return false;
-    } else if (group == null ) {
+    } else if (group == null) {
         alert("Invalid Group");
         return false;
-    } else if ( medium == "") {
+    } else if (medium == "") {
         alert("Invalid Medium");
         return false;
-    } else if ( hscMaxMark == "") {
+    } else if (hscMaxMark == "") {
         alert("Invalid HSC Max Marks");
         return false;
-    } else if ( hscTotalMark == "") {
+    } else if (hscTotalMark == "") {
         alert("Invalid HSC Total Marks");
         return false;
-    } else if ( sslcMaxMark == null) {
+    } else if (cutOffMark == "") {
+        alert("Invalid cutoff Mark");
+        return false;
+    } else if (sslcMaxMark == null) {
         alert("Invalid SSLC Max Marks");
         return false;
-    } else if (sslcTotalMark == "" ) {
+    } else if (sslcTotalMark == "") {
         alert("Invalid SSLC Total Marks");
         return false;
-    } else if (branch == "" ) {
+    } else if (branch == "") {
         alert("Invalid Branch");
         return false;
     } else {
@@ -54,6 +58,7 @@ function academic() {
             "medium": medium,
             "hscMaxMark": hscMaxMark,
             "hscTotalMark": hscTotalMark,
+            "percentage":cutOffMark,
             "sslcMaxMark": sslcMaxMark,
             "sslcTotalMark": sslcTotalMark,
             "branch": branch

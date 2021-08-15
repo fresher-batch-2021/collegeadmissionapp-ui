@@ -181,6 +181,12 @@
                     </tr>
                     <tr>
                         <th scope="col">
+                            <label>Cut-Off Marks</label>
+                        </th>
+                        <td>
+                            <label id="percentage"></label>
+                        </td>
+                        <th scope="col">
                             <label>Choosed Branch</label>
                         </th>
                         <td>
@@ -226,6 +232,7 @@
         document.querySelector("#medium").innerHTML = reg.medium;
         document.querySelector("#hscMaxMark").innerHTML = reg.hscMaxMark;
         document.querySelector("#hscTotalMark").innerHTML = reg.hscTotalMark;
+        document.querySelector("#percentage").innerHTML = reg.percentage;
         document.querySelector("#sslcMaxMark").innerHTML = reg.sslcMaxMark;
         document.querySelector("#sslcTotalMark").innerHTML = reg.sslcTotalMark;
         document.querySelector("#branch").innerHTML = reg.branch;
@@ -233,8 +240,8 @@
         //Get Values from Edit option
         let formDetails = JSON.parse(localStorage.getItem('editform'));
 
-        document.querySelector("#firstName").innerHTML = formDetails.firstName
-        document.querySelector("#lastName").innerHTML = formDetails.lastName
+        document.querySelector("#firstName").innerHTML = formDetails.firstName;
+        document.querySelector("#lastName").innerHTML = formDetails.lastName;
         document.querySelector("#fatherName").innerHTML = formDetails.fatherName;
         document.querySelector("#motherName").innerHTML = formDetails.motherName;
         document.querySelector("#dateOfBirth").innerHTML = formDetails.DOB;
@@ -254,9 +261,17 @@
         document.querySelector("#medium").innerHTML = formDetails.medium;
         document.querySelector("#hscMaxMark").innerHTML = formDetails.hscMaxMark;
         document.querySelector("#hscTotalMark").innerHTML = formDetails.hscTotalMark;
+        document.querySelector("#percentage").innerHTML = formDetails.percentage;
         document.querySelector("#sslcMaxMark").innerHTML = formDetails.sslcMaxMark;
         document.querySelector("#sslcTotalMark").innerHTML = formDetails.sslcTotalMark;
         document.querySelector("#branch").innerHTML = formDetails.branch;
+
+        let registerDetails = JSON.parse(localStorage.getItem('registerData'));
+        console.log(registerDetails);
+        console.log(registerDetails.regName);
+        console.log(registerDetails.regMobileNumber);
+        console.log(registerDetails.regEmail);
+
 
         let formObj = {
             "PersonalInformation": {
@@ -285,6 +300,7 @@
                 "medium": formDetails.medium,
                 "hscMaxMark": formDetails.hscMaxMark,
                 "hscTotalMark": formDetails.hscTotalMark,
+                "percentage": formDetails.percentage,
                 "sslcMaxMark": formDetails.sslcMaxMark,
                 "sslcTotalMark": formDetails.sslcTotalMark,
                 "branch": formDetails.branch
@@ -292,6 +308,16 @@
 
         }
         console.log(formObj);
+
+        let viewApplication = {
+            "name": registerDetails.regName,
+            "branch": formDetails.branch,
+            "percentage": formDetails.percentage,
+            "district": formDetails.district,
+            "email": registerDetails.regEmail,
+            "contactNumber": registerDetails.regMobileNumber
+        }
+        console.log("View-Application", viewApplication);
     </script>
     <script src="assets/js/jquery.min.js"></script>
     <script>

@@ -4,6 +4,7 @@
 
 body {
     font-family: Verdana, sans-serif;
+    background-color: darkgray;
     margin: 0
 }
 h2 {
@@ -11,10 +12,13 @@ h2 {
     text-align: center;
     text-decoration: underline;
 }
-
+.image{
+    margin-top: 40px;
+    margin-left: 20px;
+}
 aside {
     width: 30%;
-    height: 320px;
+    height: 280px;
     padding-left: 15px;
     margin-top: 40px;
     margin-left: 15px;
@@ -25,6 +29,8 @@ aside {
 }
 
 aside .eventTable{
+    margin: auto;
+    margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;

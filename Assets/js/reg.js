@@ -7,6 +7,13 @@ function register() {
     const userName = document.querySelector("#userName").value;
     const userPassword = document.querySelector("#userPassword").value;
     const confirmPassword = document.querySelector("#confirmPassword").value;
+
+    let registerData = {
+        "regName": candidateName,
+        "regMobileNumber": mobileNumber,
+        "regEmail": email
+    };
+
     let url = "https://product-mock-api.herokuapp.com/collegeadmissionapp/api/v1/auth/register";
     let formData = {
         name: candidateName,
@@ -20,7 +27,7 @@ function register() {
     if (candidateName == "" || candidateName == null || candidateName.trim() == "") {
         alert("Candidatename Cannot be Blank");
         return false;
-    } else if (mobileNumber == "" || mobileNumber == null || mobileNumber.length!=10) {
+    } else if (mobileNumber == "" || mobileNumber == null || mobileNumber.length != 10) {
         alert("Mobile Number Cannot be Blank");
         return false;
     } else if (dob == "") {
@@ -49,6 +56,7 @@ function register() {
             let data = res.data;
             console.log(data);
             alert("Successffully Register");
+            localStorage.setItem('registerData', JSON.stringify(registerData));
             window.location.href = "login.html";
         }).catch(err => {
             console.error(err);

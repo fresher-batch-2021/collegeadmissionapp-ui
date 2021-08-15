@@ -180,6 +180,12 @@
                     </tr>
                     <tr>
                         <th scope="col">
+                            <label>Cut-Off Marks</label>
+                        </th>
+                        <td>
+                            <label id="percentage"></label>
+                        </td>
+                        <th scope="col">
                             <label>Choosed Branch</label>
                         </th>
                         <td>
@@ -226,6 +232,7 @@
         const medium = document.querySelector("#medium").value = reg.medium;
         const hscMaxMark = document.querySelector("#hscMaxMark").value = reg.hscMaxMark;
         const hscTotalMark = document.querySelector("#hscTotalMark").value = reg.hscTotalMark;
+        const percentage = document.querySelector("#percentage").value = reg.percentage;
         const sslcMaxMark = document.querySelector("#sslcMaxMark").value = reg.sslcMaxMark;
         const sslcTotalMark = document.querySelector("#sslcTotalMark").value = reg.sslcTotalMark;
         const branch = document.querySelector("#branch").value = reg.branch;
@@ -253,6 +260,7 @@
             let studentMedium = document.querySelector("#medium").value;
             let studentHSCMaxMark = document.querySelector("#hscMaxMark").value;
             let studentHSCTotalMark = document.querySelector("#hscTotalMark").value;
+            let studentPercentage=document.querySelector("#percentage").value;
             let studentSSLCMaxMark = document.querySelector("#sslcMaxMark").value;
             let studentSSLCTotalMark = document.querySelector("#sslcTotalMark").value;
             let studentBranch = document.querySelector("#branch").value;
@@ -279,6 +287,7 @@
                 "medium": studentMedium,
                 "hscMaxMark": studentHSCMaxMark,
                 "hscTotalMark": studentHSCTotalMark,
+                "percentage":studentPercentage,
                 "sslcMaxMark": studentSSLCMaxMark,
                 "sslcTotalMark": studentSSLCTotalMark,
                 "branch": studentBranch
