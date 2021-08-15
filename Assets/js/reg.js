@@ -24,6 +24,10 @@ function register() {
         password: userPassword,
     }
 
+    Validator.isValidString(candidateName, "Candidatename Cannot be Blank");
+    Validator.isValidString(language, "Movie Language is Mandatory");
+    Validator.isValidString(imageUrl, "Movie Image is Mandatory");
+
     if (candidateName == "" || candidateName == null || candidateName.trim() == "") {
         alert("Candidatename Cannot be Blank");
         return false;
