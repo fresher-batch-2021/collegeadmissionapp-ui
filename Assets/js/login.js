@@ -2,14 +2,9 @@ function login() {
     event.preventDefault();
     const userName = document.querySelector("#userName").value;
     const password = document.querySelector("#password").value;
-
-    if (userName == "" || userName == null) {
-        alert("Username cannot be blank");
-        return false;
-    } else if (password == "" || password == null || password.trim() == "") {
-        alert("Password cannot be blank");
-        return false;
-    } else {
+    try {
+        Validator.isValidString(userName, "UserName Cannot be Blank");
+        Password.isValidPassword(password, "Password contain atleast 8 Characters");
         let userObj = {
             "userName": userName,
             "password": password
@@ -29,8 +24,12 @@ function login() {
         }).catch(err => {
             let errorMessage = err.response.data.errorMessage;
             console.error(errorMessage);
-            alert("Error-" + errorMessage);
+            alert(errorMessage);
         });
 
+    } catch (err) {
+        console.error(err.message);
+        alert(err.message);
     }
+
 }
