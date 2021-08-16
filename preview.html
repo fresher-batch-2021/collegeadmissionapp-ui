@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview</title>
     <link rel="stylesheet" href="Assets/css/preview.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -309,15 +312,40 @@
         }
         console.log(formObj);
 
-        let viewApplication = {
-            "name": registerDetails.regName,
-            "branch": formDetails.branch,
-            "percentage": formDetails.percentage,
-            "district": formDetails.district,
-            "email": registerDetails.regEmail,
-            "contactNumber": registerDetails.regMobileNumber
+        try {
+            let viewApplication = {
+                "name": registerDetails.regName,
+                "branch": formDetails.branch,
+                "percentage": formDetails.percentage,
+                "district": formDetails.district,
+                "email": registerDetails.regEmail,
+                "status": "pending"
+            }
+            console.log("View-Application", viewApplication);
+            const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+            const dbPassword = "163671d490ddeef138fc61e470881715";
+            const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+
+            let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication";
+
+            let applicationData = {
+                name: registerDetails.regName,
+                branch: formDetails.branch,
+                percentage: formDetails.percentage,
+                district: formDetails.district,
+                email: registerDetails.regEmail,
+                status: "pending"
+            }
+            axios.post(url, applicationData, { headers: { 'Authorization': basicAuth } }).then(res => {
+                let data = res.data;
+                console.log(data);
+                alert("Successffully Register");
+            })
+        } catch (err) {
+            console.error(err.message);
+            alert(err.message);
+            alert("Unable to register");
         }
-        console.log("View-Application", viewApplication);
     </script>
     <script src="assets/js/jquery.min.js"></script>
     <script>

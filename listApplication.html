@@ -15,11 +15,13 @@
         <table border="1" aria-describedby="mydesc">
             <thead>
                 <tr>
-                    <th scope="col">S.No</th>
-                    <th scope="col">Candidate Name</th>
-                    <th scope="col">Contact Number</th>
-                    <th scope="col">Date of Birth</th>
-                    <th scope="col">Email-ID</th>
+                    <th id="searchBar">S.No</th>
+                    <th id="searchBar">Name</th>
+                    <th id="searchBar">Branch</th>
+                    <th id="searchBar">Percentage</th>
+                    <th id="searchBar">Address</th>
+                    <th id="searchBar">Email-ID</th>
+                    <th id="searchBar">Status</th>
                 </tr>
             </thead>
             <tbody id="tasks-table"></tbody>
@@ -31,24 +33,29 @@
                 {
                     id: 1,
                     name: "Ganesh",
-                    contactNumber: 1234567890,
-                    dob: "10-06-1997",
-                    emailId: "ganesh@gmail.com"
+                    branch:"ECE",
+                    percentage:78,
+                    address:"Salem",
+                    emailId: "ganesh@gmail.com",
+                    status:"pending"
                 },
                 {
                     id: 2,
-                    name: "Ranesh",
-                    contactNumber: 1234567890,
-                    dob: "10-06-1998",
-                    emailId: "rajesh@gmail.com"
+                    name: "Rajesh",
+                    branch:"CSE",
+                    percentage:70,
+                    address:"Chennai",
+                    emailId: "rajesh@gmail.com",
+                    status:"pending"
                 }
             ];
             let content = "";
             for (let taskObj of tasks) {
                 content =
                     content +
-                    `<tr><td>${taskObj.id}</td><td>${taskObj.name}</td><td>${taskObj.contactNumber}
-                        </td><td>${taskObj.dob}</td><td>${taskObj.dob}</td></tr>`;
+                    `<tr><td>${taskObj.id}</td><td>${taskObj.name}</td><td>${taskObj.branch}
+                        </td><td>${taskObj.percentage}</td><td>${taskObj.address}</td><td>${taskObj.emailId}</td>
+                        <td>${taskObj.status}</td></tr>`;
             }
             console.log(content);
             document.querySelector("#tasks-table").innerHTML = content;
