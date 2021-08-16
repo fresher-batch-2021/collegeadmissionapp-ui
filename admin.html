@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="Assets/css/admin.css">
+    <script src="Assets/js/admin.js"></script>
+    <script src="Assets/js/validator.js"></script>
+    <script src="Assets/js/password.js"></script>
 </head>
 
 <body>
@@ -14,17 +17,17 @@
 
         <div class="login">
             <img src="Assets/images/skcet.png" alt="user logo" class="logo">
-            <form id="login" onsubmit="login_validation()">
+            <form id="login" onsubmit="admin()">
                 <label>
                     <strong>User Name</strong>
                 </label>
-                <input type="text" name="username" id="username" placeholder="Username" required>
+                <input type="text" name="username" id="userName" placeholder="UserName" required>
                 <br>
                 <br>
                 <label>
                     <strong>Password</strong>
                 </label>
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password" minlength="8" placeholder="Password" required>
                 <br>
                 <br>
                 <br>
