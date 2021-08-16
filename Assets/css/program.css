@@ -1,4 +1,11 @@
-legend {
+*{
+    margin: 0;
+    padding: 0;
+}
+.program{
+    font-family: sans-serif;
+}
+.program legend {
     margin: 30px;
     background-color: red;
     color: white;
@@ -6,14 +13,14 @@ legend {
     border-radius: 10px;
 }
 
-table {
+.program table {
+    font-family: sans-serif;
     margin-left: 20px;
     margin-right: 20px;
     width: 1000px;
     text-align: center;
     table-layout: auto;
     border-radius: 10px;
-
 }
 
 table,
