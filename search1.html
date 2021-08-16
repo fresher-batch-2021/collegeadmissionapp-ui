@@ -81,13 +81,13 @@
 
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td id="row1">1</td>
                     <td>Mani</td>
                     <td>EEE</td>
                     <td>67</td>
                     <td>Salem</td>
                     <td>8765432189</td>
-                    <td><button>Accept</button>&nbsp;<button>Reject</button></td>
+                    <td><button onclick="accept()">Accept</button>&nbsp;<button onclick="reject()">Reject</button></td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -96,7 +96,7 @@
                     <td>75</td>
                     <td>Dharmapuri</td>
                     <td>8765892189</td>
-                    <td><button>Accept</button>&nbsp;<button>Reject</button></td>
+                    <td><button onclick="accept()">Accept</button>&nbsp;<button onclick="reject()">Reject</button></td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -105,7 +105,7 @@
                     <td>60</td>
                     <td>Erode</td>
                     <td>8766732189</td>
-                    <td><button>Accept</button>&nbsp;<button>Reject</button></td>
+                    <td><button onclick="accept()">Accept</button>&nbsp;<button onclick="reject()">Reject</button></td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -114,7 +114,7 @@
                     <td>80</td>
                     <td>Chennai</td>
                     <td>8700732189</td>
-                    <td><button>Accept</button>&nbsp;<button>Reject</button></td>
+                    <td><button onclick="accept()">Accept</button>&nbsp;<button onclick="reject()">Reject</button></td>
                 </tr>
             </table>
     </div>
@@ -137,7 +137,14 @@
                 }
             }
         }
-
+        function accept() {
+            alert("function works");
+            const accept = document.getElementById("myTable").value;
+            console.log(accept);
+        }
+        function reject(){
+            
+        }
     </script>
 </body>
 
