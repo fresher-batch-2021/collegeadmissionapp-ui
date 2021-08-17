@@ -5,63 +5,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>View-Application</title>
+    <link rel="stylesheet" href="Assets/css/list.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Assets/js/list.js"> </script>
 </head>
 
 <body>
     <main>
-        <h3>Application-Details</h3>
-        <table border="1" aria-describedby="mydesc">
-            <thead>
-                <tr>
-                    <th id="searchBar">S.No</th>
-                    <th id="searchBar">Name</th>
-                    <th id="searchBar">Branch</th>
-                    <th id="searchBar">Percentage</th>
-                    <th id="searchBar">Address</th>
-                    <th id="searchBar">Email-ID</th>
-                    <th id="searchBar">Status</th>
-                </tr>
-            </thead>
-            <tbody id="tasks-table"></tbody>
-        </table>
+        <div class="searchBar">
+            <h1>Submitted-Applications</h1>
+            <input type="text " id="myInput" class="myInput" placeholder="search for dept.." onkeyup="searchFun()"
+                autocomplete="off">
+            <select>
+                <option>Dept</option>
+                <option>Percentage</option>
+            </select>
+            <table border="1" aria-describedby="mydesc" id="myTable">
+                <thead>
+                    <tr>
+                        <th id="searchBar">Application-ID</th>
+                        <th id="searchBar">Name</th>
+                        <th id="searchBar">Branch</th>
+                        <th id="searchBar">Percentage</th>
+                        <th id="searchBar">Address</th>
+                        <th id="searchBar">Email-ID</th>
+                        <th id="searchBar">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks-table"></tbody>
+            </table>
+        </div>
     </main>
-    <script>
-        function displayTasks() {
-            let tasks = [
-                {
-                    id: 1,
-                    name: "Ganesh",
-                    branch:"ECE",
-                    percentage:78,
-                    address:"Salem",
-                    emailId: "ganesh@gmail.com",
-                    status:"pending"
-                },
-                {
-                    id: 2,
-                    name: "Rajesh",
-                    branch:"CSE",
-                    percentage:70,
-                    address:"Chennai",
-                    emailId: "rajesh@gmail.com",
-                    status:"pending"
-                }
-            ];
-            let content = "";
-            for (let taskObj of tasks) {
-                content =
-                    content +
-                    `<tr><td>${taskObj.id}</td><td>${taskObj.name}</td><td>${taskObj.branch}
-                        </td><td>${taskObj.percentage}</td><td>${taskObj.address}</td><td>${taskObj.emailId}</td>
-                        <td>${taskObj.status}</td></tr>`;
-            }
-            console.log(content);
-            document.querySelector("#tasks-table").innerHTML = content;
-        }
-        displayTasks();
-    </script>
 </body>
 
 </html>
