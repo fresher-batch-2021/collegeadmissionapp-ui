@@ -15,6 +15,6 @@ function admin() {
     } else {
         console.log(userObj);
         alert("Login Successfull");
-        window.location.href = "search1.html";
+        window.location.href = "listApplication.html";
     }
 }
