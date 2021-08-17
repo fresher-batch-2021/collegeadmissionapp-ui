@@ -45,7 +45,8 @@ function displayTasks(tableData) {
             <td>${taskObj.doc._rev}</td>
             <td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
-                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept</button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td></tr>`;
+                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept
+                </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td></tr>`;
         // console.log(content);
         document.querySelector("#applicationTable").innerHTML = content;
     }
@@ -87,7 +88,7 @@ function searchFun() {
     let myTable = document.getElementById("myTable");
     let tableRow = myTable.getElementsByTagName("tr");
     for (var i = 0; i < tableRow.length; i++) {
-        let tableData = tableRow[i].getElementsByTagName("td")[2];
+        let tableData = tableRow[i].getElementsByTagName("td")[3];
         if (tableData) {
             let textValue = tableData.textContent || tableData.innerText;
             if (textValue.toUpperCase().indexOf(searchInput) > -1) {
