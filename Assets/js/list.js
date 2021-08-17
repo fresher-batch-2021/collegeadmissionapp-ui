@@ -43,14 +43,14 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
 function displayTasks(tableData) {
     let content = "";
     for (let taskObj of tableData) {
-        console.log("data : ", taskObj.doc.status);
+        //console.log("data : ", taskObj.doc.status);
         content =
             content +
             `<tr><td>${taskObj.doc._id}</td><td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
                 <td>${taskObj.doc.status}</td></tr>`;
         console.log(content);
-        document.querySelector("#tasks-table").innerHTML = content;
+        document.querySelector("#applicationTable").innerHTML = content;
     }
 }
 function searchFun() {
