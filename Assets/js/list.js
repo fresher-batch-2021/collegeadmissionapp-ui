@@ -43,15 +43,21 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
 function displayTasks(tableData) {
     let content = "";
     for (let taskObj of tableData) {
-        //console.log("data : ", taskObj.doc.status);
         content =
             content +
             `<tr><td>${taskObj.doc._id}</td><td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
-                <td>${taskObj.doc.status}</td></tr>`;
+                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPT')">Accept</button>&nbsp;&nbsp;&nbsp;<button>Reject</button></td></tr>`;
         console.log(content);
         document.querySelector("#applicationTable").innerHTML = content;
     }
+}
+
+function updateStatus(id,status){
+    alert('Update ' + id + ',status=' + status);
+    //call backend api and update status
+
+    
 }
 function searchFun() {
     let searchInput = document.getElementById("myInput").value.toUpperCase();
