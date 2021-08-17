@@ -41,31 +41,42 @@ function displayTasks(tableData) {
     for (let taskObj of tableData) {
         content =
             content +
-            `<tr><td>${taskObj.doc._id}</td><td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
+            `<tr><td>${taskObj.doc._id}</td>
+            <td>${taskObj.doc._rev}</td>
+            <td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
-                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPT')">Accept</button>&nbsp;&nbsp;&nbsp;<button>Reject</button></td></tr>`;
-        console.log(content);
+                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept</button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td></tr>`;
+        // console.log(content);
         document.querySelector("#applicationTable").innerHTML = content;
     }
 }
 
 function updateStatus(id, status) {
-    alert('Update ' + id + ',status=' + status);
+    console.log('Update ' + id + ',status=' + status);
     //call backend api and update status
     const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
     const dbPassword = "163671d490ddeef138fc61e470881715";
     const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
 
-    let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/4ceccbc5b724585de20cd9c8b64694ba"
-    axios.post(url, applicationData, { headers: { 'Authorization': basicAuth } }).then(res => {
-        let data = res.data;
-        console.log("response : ", data);
-        tableData = data.rows;
-        console.log("table list :", tableData);
-        console.log("success");
-        displayTasks(tableData);
+    //get by id
+    let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/" + id;
+    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+        const applicationObj = res.data;
+
+        applicationObj.status = status;
+
+        //update status api
+        const updateURL = url + "?rev=" + applicationObj._rev;
+        console.log(updateURL);
+        axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(res => {
+            console.log("Update row", res.data);
+            alert("Updated");
+            window.location.reload();
+
+        });
+
     }).catch(err => {
-        let errorMessage = err.response.data.errorMessage;
+        let errorMessage = err.response.data;
         console.error(errorMessage);
         console.log("failed");
         alert("Error-" + errorMessage);
