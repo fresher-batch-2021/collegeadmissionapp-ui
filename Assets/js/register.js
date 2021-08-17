@@ -1,5 +1,8 @@
 function register() {
     event.preventDefault();
+
+    //Getting values from Forms..
+
     const candidateName = document.querySelector("#candidateName").value;
     const mobileNumber = document.querySelector("#contactNumber").value;
     const dob = document.querySelector("#dob").value;
@@ -8,6 +11,7 @@ function register() {
     const userPassword = document.querySelector("#userPassword").value;
     const confirmPassword = document.querySelector("#confirmPassword").value;
 
+    
     try {
         let registerData = {
             "regName": candidateName,
@@ -23,13 +27,15 @@ function register() {
             password: userPassword,
         }
 
-        Validator.isValidString(candidateName, "Candidatename Cannot be Blank");
+        //Validate Form Fields...
+        
+        Validator.isValidString(candidateName, "Candidate Name Cannot be Blank");
         Validator.isValidString(mobileNumber, "Mobile Number Cannot be Blank");
-        Validator.isValidString(dob, "DOB Cannot be Blank");
+        Validator.isValidString(dob, "Date Of Birth Cannot be Blank");
         Validator.isValidString(email, "Email Cannot be Blank");
         Validator.isValidString(userName, "UserName Cannot be Blank");
-        Password.isValidPassword(userPassword, "UserPassword contain atleast 8 Characters");
-        Password.isValidPassword(confirmPassword, "ConfirmPassword contain atleast 8 Characters");
+        Password.isValidPassword(userPassword, "Password must contain atleast 8 Characters");
+        Password.isValidPassword(confirmPassword, "Password must contain atleast 8 Characters");
 
         UserService.register(formData).then(res => {
             let data = res.data;
@@ -37,7 +43,10 @@ function register() {
             alert("Successffully Register");
             localStorage.setItem('registerData', JSON.stringify(registerData));
             window.location.href = "login.html";
-        })
+        }).catch(err => {
+            alert(err.message);
+            alert("Unable to register");
+        });
     } catch (err) {
         console.error(err.message);
         alert(err.message);

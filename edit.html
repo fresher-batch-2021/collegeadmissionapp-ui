@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit-Application</title>
-    <link rel="stylesheet" href="Assets/css/edit.css">
+    <link rel="stylesheet" href="assets/css/edit.css">
 
 </head>
 
@@ -14,7 +14,7 @@
     <header id="header"></header>
     <main>
         <div class="userDetails">
-            <form action="preview.html" onsubmit="editApplication()">
+            <form onsubmit="editApplication()">
                 <h3>Student-Information</h3>
                 <table aria-describedby="mydesc" class="table">
                     <tr>
@@ -260,7 +260,7 @@
             let studentMedium = document.querySelector("#medium").value;
             let studentHSCMaxMark = document.querySelector("#hscMaxMark").value;
             let studentHSCTotalMark = document.querySelector("#hscTotalMark").value;
-            let studentPercentage=document.querySelector("#percentage").value;
+            let studentPercentage = document.querySelector("#percentage").value;
             let studentSSLCMaxMark = document.querySelector("#sslcMaxMark").value;
             let studentSSLCTotalMark = document.querySelector("#sslcTotalMark").value;
             let studentBranch = document.querySelector("#branch").value;
@@ -287,7 +287,7 @@
                 "medium": studentMedium,
                 "hscMaxMark": studentHSCMaxMark,
                 "hscTotalMark": studentHSCTotalMark,
-                "percentage":studentPercentage,
+                "percentage": studentPercentage,
                 "sslcMaxMark": studentSSLCMaxMark,
                 "sslcTotalMark": studentSSLCTotalMark,
                 "branch": studentBranch

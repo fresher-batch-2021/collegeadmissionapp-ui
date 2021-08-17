@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration</title>
-    <link rel="stylesheet" href="Assets/css/reg.css">
-    <script src="Assets/js/reg1.js"></script>
-    <script src="Assets/js/serviceLayer.js"></script>
-    <script src="Assets/js/validator.js"></script>
-    <script src="Assets/js/password.js"></script>
+    <link rel="stylesheet" href="assets/css/reg.css">
+    <script src="assets/js/register.js"></script>
+    <script src="assets/js/serviceLayer.js"></script>
+    <script src="assets/js/validator.js"></script>
+    <script src="assets/js/password.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -18,9 +18,9 @@
 
 <body>
     <div class="name">
-        <img src="user.png" alt="UserImage" class="user">
+        <img src="/assets/images/user.png" alt="UserImage" class="user">
         <h1>Registration Form</h1>
-        <form action="login.html" onsubmit="register()">
+        <form onsubmit="register()">
             <table cellpadding="10" aria-describedby="mydesc">
                 <tr>
                     <th scope="col">
@@ -28,7 +28,7 @@
                     </th>
                     <td>
                         <input type="text" id="candidateName" pattern="[A-Za-z]{3,30}" placeholder="Candidate Name"
-                            required autocomplete="off">
+                            required autocomplete="off" autofocus>
                     </td>
                 </tr>
                 <tr>
@@ -88,8 +88,8 @@
             </table>
 
             <div class="buttons">
-                <input type="reset" id="reset" value="Reset">&nbsp;&nbsp;&nbsp;
-                <input type="Submit" id="submit" value="Submit">
+                <button type="reset" id="reset" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;
+                <button type="Submit" id="submit" value="Submit">Submit</button>
             </div>
 
 

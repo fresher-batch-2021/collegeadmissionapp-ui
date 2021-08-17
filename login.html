@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Form</title>
-    <link rel="stylesheet" href="Assets/css/login.css">
-    <script src="Assets/js/login.js"></script>
-    <script src="Assets/js/validator.js"></script>
-    <script src="Assets/js/password.js"></script>
-    <script src="Assets/js/serviceLayer.js"></script>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/validator.js"></script>
+    <script src="assets/js/password.js"></script>
+    <script src="assets/js/serviceLayer.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -21,16 +21,16 @@
     <div class="back_img">
         <div class="loginBox">
             <h1>Login Here</h1>
-            <form action="personalinfo.html" onsubmit="login()">
+            <form onsubmit="login()">
                 <label>UserName</label>
-                <input type="text" id="userName" placeholder="EnterUsername" required autocomplete="off">
+                <input type="text" id="userName" placeholder="EnterUsername" required autocomplete="off" autofocus>
                 <label>Password</label>
-                <input type="password" id="password" placeholder="EnterPassword" required autocomplete="off">
-                <input type="submit" name="submit" value="Login">
+                <input type="password" id="password" placeholder="EnterPassword" required autocomplete="off" autofocus>
+                <button type="submit" name="submit" value="Login">Login</button>
                 <br>
                 <br>
                 <label>New Registration</label>
-                <a href="reg.html">Click Here</a>
+                <a href="register.html">Click Here</a>
             </form>
 
         </div>

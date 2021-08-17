@@ -4,7 +4,7 @@
 }
 
 .name {
-    background-image: url('image.jpg');
+    background-image: url('/assets/images/image.jpg');
     max-width: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -40,8 +40,8 @@ strong{
     
 }
 
-.name input[type="submit"],
-input[type="reset"] {
+.name button[type="submit"],
+button[type="reset"] {
     border: none;
     outline: none;
     height: 30px;
@@ -51,8 +51,8 @@ input[type="reset"] {
     border-radius: 20px;
 }
 
-.submit input[type="submit"]:hover,
-input[type="reset"]:hover {
+.submit button[type="submit"]:hover,
+button[type="reset"]:hover {
     cursor: pointer;
     background: greenyellow;
     color: #000;

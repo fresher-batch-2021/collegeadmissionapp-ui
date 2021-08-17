@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Personal-Info</title>
-    <link rel="stylesheet" href="Assets/css/personal.css">
-    <script src="Assets/js/personal.js"> </script>
+    <link rel="stylesheet" href="assets/css/personal.css">
+    <script src="assets/js/personal.js"> </script>
     <script src="assets/js/jquery.min.js"></script>
 </head>
 
@@ -17,20 +17,22 @@
         <div class="name">
             <strong id="userName"></strong>
             <h1>Personal-Information</h1>
-            <form action="academic.html" onsubmit="personal()">
+            <form onsubmit="personal()">
                 <table class="table" aria-describedby="mydesc">
                     <tr>
                         <th scope="col">
                             <label>First Name </label>
                         </th>
                         <td>
-                            <input type="text" id="firstName" pattern="[A-Za-z]{3,30}" placeholder="FirstName" required autocomplete="off">
+                            <input type="text" id="firstName" pattern="[A-Za-z]{3,30}" placeholder="FirstName" required
+                                autocomplete="off">
                         </td>
                         <th scope="col">
                             <label>Last Name </label>
                         </th>
                         <td>
-                            <input type="text" id="lastName" pattern="[A-Za-z]{1}" placeholder="Lastname" autocomplete="off" required>
+                            <input type="text" id="lastName" pattern="[A-Za-z]{1}" placeholder="Lastname"
+                                autocomplete="off" required>
                         </td>
                     </tr>
                     <tr>
@@ -38,13 +40,15 @@
                             <label>Father Name </label>
                         </th>
                         <td>
-                            <input type="text" id="fatherName" pattern="[A-Za-z]{3,30}" placeholder="Fathername" autocomplete="off" required>
+                            <input type="text" id="fatherName" pattern="[A-Za-z]{3,30}" placeholder="Fathername"
+                                autocomplete="off" required>
                         </td>
                         <th scope="col">
                             <label>Mother Name </label>
                         </th>
                         <td>
-                            <input type="text" id="motherName" pattern="[A-Za-z]{3,30}" placeholder="Mothername" autocomplete="off" required>
+                            <input type="text" id="motherName" pattern="[A-Za-z]{3,30}" placeholder="Mothername"
+                                autocomplete="off" required>
                         </td>
                     </tr>
                     <tr>
@@ -156,8 +160,8 @@
                     </tr>
                 </table>
                 <div class="submit">
-                    <input type="reset" id="submit" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" id="reset" value="Save&Continue">
+                    <button type="reset" id="submit" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" id="reset" value="Save&Continue">Save&Continue</button>
                 </div>
 
             </form>
