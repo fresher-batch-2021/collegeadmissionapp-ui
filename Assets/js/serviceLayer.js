@@ -24,6 +24,7 @@ class UserService {
         return (axios.post(url, formData, { headers: { 'Authorization': basicAuth } }));
     }
 
+    
     static addService(applicationData) {
         const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
         const dbPassword = "163671d490ddeef138fc61e470881715";

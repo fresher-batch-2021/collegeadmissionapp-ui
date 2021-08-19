@@ -47,7 +47,6 @@ function displayTasks(tableData) {
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
                 <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept
                 </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td></tr>`;
-        // console.log(content);
         document.querySelector("#applicationTable").innerHTML = content;
     }
 }
@@ -61,16 +60,16 @@ function updateStatus(id, status) {
 
     //get by id
     let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/" + id;
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
-        const applicationObj = res.data;
+    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(result => {
+        const applicationObj = result.data;
 
         applicationObj.status = status;
 
         //update status api
         const updateURL = url + "?rev=" + applicationObj._rev;
         console.log(updateURL);
-        axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(res => {
-            console.log("Update row", res.data);
+        axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(result => {
+            console.log("Update row", result.data);
             alert("Updated");
             window.location.reload();
 
@@ -88,9 +87,9 @@ function searchFun() {
     let myTable = document.getElementById("myTable");
     let tableRow = myTable.getElementsByTagName("tr");
     for (var i = 0; i < tableRow.length; i++) {
-        let tableData = tableRow[i].getElementsByTagName("td")[3];
-        if (tableData) {
-            let textValue = tableData.textContent || tableData.innerText;
+        let tableDatas = tableRow[i].getElementsByTagName("td")[3];
+        if (tableDatas) {
+            let textValue = tableDatas.textContent || tableDatas.innerText;
             if (textValue.toUpperCase().indexOf(searchInput) > -1) {
                 tableRow[i].style.display = "";
             } else {
