@@ -46,7 +46,8 @@ function displayTasks(tableData) {
             <td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
                 <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept
-                </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td></tr>`;
+                </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td>
+                <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</td></tr>`;
         document.querySelector("#applicationTable").innerHTML = content;
     }
 }
@@ -82,6 +83,25 @@ function updateStatus(id, status) {
         alert("Error-" + errorMessage);
     });
 }
+function deleteFun(id, revId) {
+    alert("Function Works")
+    console.log('Delete' + id + " " + revId);
+
+    const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+    const dbPassword = "163671d490ddeef138fc61e470881715";
+    const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+    let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/" + id + "?rev=" + revId;
+    axios.delete(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+        console.log("success");
+        window.location.reload();
+    }).catch(err => {
+        let errorMessage = err.response.data.errorMessage;
+        console.error(errorMessage);
+        console.log("failed");
+        alert("Error-" + errorMessage);
+    });
+}
+
 function searchFun() {
     let searchInput = document.getElementById("myInput").value.toUpperCase();
     let myTable = document.getElementById("myTable");
@@ -98,3 +118,5 @@ function searchFun() {
         }
     }
 }
+
+
