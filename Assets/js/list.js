@@ -20,7 +20,13 @@ let tasks = [
 ];
 
 let tableData = [];
-
+/*
+const sortArray = tableData.sort(a, b => {
+    if (a.doc.name < b.doc.name) return -1;
+    if (a.doc.name > b.doc.name) return 1;
+    return 0;
+});
+*/
 UserService.listService().then(res => {
     let data = res.data;
     console.log("response : ", data);
@@ -37,12 +43,19 @@ UserService.listService().then(res => {
 });
 
 function displayTasks(tableData) {
+    const resArray = tableData.sort((a, b) => {
+        nameA = a.doc.name.toLowerCase();
+        nameB = b.doc.name.toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+        return 0;
+    });
+    console.log("Result", resArray);
     let content = "";
-    for (let taskObj of tableData) {
+    for (let taskObj of resArray) {
         content =
             content +
             `<tr><td>${taskObj.doc._id}</td>
-            <td>${taskObj.doc._rev}</td>
             <td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
                 <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept

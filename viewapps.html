@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View-Application</title>
+    <link rel="stylesheet" href="assets/css/list.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.tmpl.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="searchBar">
+            <h1>Submitted-Applications</h1>
+            <table border="1" aria-describedby="mydesc" id="myTable">
+                <thead>
+                    <tr>
+                        <th id="searchBar">Name</th>
+                        <th id="searchBar">Branch</th>
+                        <th id="searchBar">Percentage</th>
+                    </tr>
+                </thead>
+                <tbody id="applicationTable"></tbody>
+            </table>
+            <template id="application">
+                <tr>
+                    <td>${name}</td>
+                    <td>${branch}</td>
+                    <td>${percentage}</td>
+                </tr>
+
+            </template>
+        </div>
+    </main>
+    <script src="https://service-api.netlify.app/giftshop/service/user-service.js"> </script>
+    <script>
+        let appObj = [{ name: "Mani", branch: "EEE", percentage: "89" }, { name: "Ganesh", branch: "ECE", percentage: "90" }];
+        $("#application").tmpl(appObj).appendTo("#applicationTable");
+    </script>
+</body>
+
+
+</html>
