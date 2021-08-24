@@ -24,7 +24,7 @@ class UserService {
         return (axios.post(url, formData, { headers: { 'Authorization': basicAuth } }));
     }
 
-    
+
     static addService(applicationData) {
         const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
         const dbPassword = "163671d490ddeef138fc61e470881715";
@@ -41,6 +41,20 @@ class UserService {
 
         let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/_all_docs?include_docs=true";
         return (axios.get(url, { headers: { 'Authorization': basicAuth } }));
+    }
+
+    static listUser(emailId) {
+        const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+        const dbPassword = "163671d490ddeef138fc61e470881715";
+        const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+        const userData = {
+            selector: {
+                email: emailId
+            },
+            fields: ["_id", "name", "branch", "percentage", "email", "status"]
+        }
+        let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/_find";
+        return (axios.post(url, userData, { headers: { 'Authorization': basicAuth } }));
     }
 
 }

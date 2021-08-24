@@ -19,8 +19,8 @@ function login() {
             else {
                 const user = data[0];
                 alert("Login Successful");
-                localStorage.setItem('userName', JSON.stringify(userObj));
-                window.location.href = "personalinfo.html";
+                localStorage.setItem('userName', JSON.stringify(user));
+                window.location.href = "index.html";
             }
         }
         )

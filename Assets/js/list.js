@@ -20,13 +20,6 @@ let tasks = [
 ];
 
 let tableData = [];
-/*
-const sortArray = tableData.sort(a, b => {
-    if (a.doc.name < b.doc.name) return -1;
-    if (a.doc.name > b.doc.name) return 1;
-    return 0;
-});
-*/
 UserService.listService().then(res => {
     let data = res.data;
     console.log("response : ", data);
@@ -120,7 +113,7 @@ function searchFun() {
     let myTable = document.getElementById("myTable");
     let tableRow = myTable.getElementsByTagName("tr");
     for (var i = 0; i < tableRow.length; i++) {
-        let tableDatas = tableRow[i].getElementsByTagName("td")[3];
+        let tableDatas = tableRow[i].getElementsByTagName("td")[2];
         if (tableDatas) {
             let textValue = tableDatas.textContent || tableDatas.innerText;
             if (textValue.toUpperCase().indexOf(searchInput) > -1) {
