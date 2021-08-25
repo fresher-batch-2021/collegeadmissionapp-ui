@@ -1,33 +1,10 @@
-let tasks = [
-    {
-        id: 1,
-        name: "Ganesh",
-        branch: "ECE",
-        percentage: 78,
-        address: "Salem",
-        emailId: "ganesh@gmail.com",
-        status: "pending"
-    },
-    {
-        id: 2,
-        name: "Rajesh",
-        branch: "CSE",
-        percentage: 70,
-        address: "Chennai",
-        emailId: "rajesh@gmail.com",
-        status: "pending"
-    }
-];
-
-let tableData = [];
+let tableValues = [];
 UserService.listService().then(res => {
     let data = res.data;
     console.log("response : ", data);
-    tableData = data.rows;
-    console.log("table list :", tableData);
-    console.log("available list :", tasks);
-    console.log("success");
-    displayTasks(tableData);
+    tableValues = data.rows;
+    console.log("table list :", tableValues);
+    displayTasks(tableValues);
 }).catch(err => {
     let errorMessage = err.response.data.errorMessage;
     console.error(errorMessage);
@@ -37,8 +14,8 @@ UserService.listService().then(res => {
 
 function displayTasks(tableData) {
     const resArray = tableData.sort((a, b) => {
-        nameA = a.doc.name.toLowerCase();
-        nameB = b.doc.name.toLowerCase();
+        const nameA = a.doc.name.toLowerCase();
+        const nameB = b.doc.name.toLowerCase();
         if (nameA < nameB) return -1;
         if (nameA > nameB) return 1;
         return 0;

@@ -6,7 +6,6 @@ function register() {
     const candidateName = document.querySelector("#candidateName").value;
     const mobileNumber = document.querySelector("#contactNumber").value;
     const dob = document.querySelector("#dob").value;
-    //const dob = setDate();
     const email = document.querySelector("#email").value;
     const userName = document.querySelector("#userName").value;
     const userPassword = document.querySelector("#userPassword").value;
