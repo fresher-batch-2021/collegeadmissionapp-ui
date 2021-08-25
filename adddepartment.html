@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Department</title>
+    <link rel="stylesheet" href="assets/css/adddept.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/adddepartment.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="department">
+        <form>
+            <h2>Add-Departments</h2>
+            <table>
+                <tr>
+                    <th><label>Degree</label></th>
+                    <td><input type="text" id="degree" placeholder="Enter Degree Name" autocomplete="off" autofocus
+                            required></td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Branch</label>
+                    </th>
+                    <td>
+                        <input type="text" id="branch" placeholder="Enter Branch Name" autocomplete="off" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>No of Seats</label>
+                    </th>
+                    <td>
+                        <input type="text" id="seats" placeholder="Enter total number of seats" autocomplete="off"
+                            required>
+                    </td>
+                </tr>
+
+            </table>
+            <div class="submit">
+                <button type="reset" id="submit" value="Reset">Reset</button>&nbsp;&nbsp;
+                <button type="Submit" id="submit" onclick="addDepartment()" value="Submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
