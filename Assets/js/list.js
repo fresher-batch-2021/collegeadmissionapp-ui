@@ -28,19 +28,34 @@ function displayTasks(tableData) {
             `<tr><td>${taskObj.doc._id}</td>
             <td>${taskObj.doc.name}</td><td>${taskObj.doc.branch}
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
-                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept
-                </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td>
-                <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</td></tr>`;
+                <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED','${taskObj.doc.branch}')">Accept
+                </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED','${taskObj.doc.branch}')">Reject</button></td>
+                <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}','${taskObj.doc.branch}')">Delete</td></tr>`;
         document.querySelector("#applicationTable").innerHTML = content;
     }
 }
 
-function updateStatus(id, status) {
-    console.log('Update ' + id + ',status=' + status);
-    //call backend api and update status
+function updateStatus(id, status, branch) {
+    console
     const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
     const dbPassword = "163671d490ddeef138fc61e470881715";
     const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+    if(status == "ACCEPTED"){
+        const requestData = {
+            selector : {
+                branch : branch
+            },
+            fields : ["_id", "_rev", "degree", "branch", "totalSeats", "availableSeats"]
+        };
+        let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/adddepartments/_find";
+        axios.post(url, requestData, {headers: { 'Authorization': basicAuth }}).then(res => {
+            let data = res.data.docs[0];
+            update_seats(data);
+        })
+    }
+    console.log('Update ' + id + ',status=' + status);
+    //call backend api and update status
+    
 
     //get by id
     let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/viewapplication/" + id;
@@ -100,6 +115,26 @@ function searchFun() {
             }
         }
     }
+}
+
+function update_seats(data){
+    let updateData = {
+        'degree' : data.degree,
+        'branch' : data.branch,
+        'availableSeats' : parseInt(data.availableSeats) - 1,
+        'totalSeats' : data.totalSeats
+    }
+    const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+    const dbPassword = "163671d490ddeef138fc61e470881715";
+    const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+    let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/adddepartments/";
+
+    axios.put(url+data._id+"?rev="+data._rev, updateData, { headers: { 'Authorization': basicAuth } }).then(res =>{
+        alert("updated sucees");
+        window.location.reload();
+    }).catch(err =>{
+        alert("failed to update");
+    })
 }
 
 

@@ -3,6 +3,7 @@ function addDepartment() {
     const degree = document.querySelector("#degree").value;
     const branch = document.querySelector("#branch").value;
     const totalSeats = document.querySelector("#seats").value;
+    const availableSeats = document.querySelector("#availableSeats").value;
     console.log(degree);
     console.log(branch);
     console.log(totalSeats);
@@ -11,7 +12,8 @@ function addDepartment() {
         let departmentData = {
             degree: degree,
             branch: branch,
-            totalSeats: totalSeats
+            totalSeats: totalSeats,
+            availableSeats: availableSeats
         }
         console.log(departmentData);
         const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
@@ -21,6 +23,7 @@ function addDepartment() {
         axios.post(url, departmentData, { headers: { 'Authorization': basicAuth } }).then(res => {
             let data = res.data;
             console.log(data);
+            localStorage.setItem('departmentObj', JSON.stringify(departmentData));
             alert("Department Added Successfully");
         }).catch(err => {
             alert(err.message);
