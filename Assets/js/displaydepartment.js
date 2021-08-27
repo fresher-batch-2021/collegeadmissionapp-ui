@@ -1,33 +1,4 @@
 let branch = [];
-/*
-let branchName;
-let branchData = JSON.parse(localStorage.getItem('departmentObj'));
-console.log("available", branchData);
-//branchName=branchData.branch;
-//console.log("branchName",branchName);
-
-UserService.availableSeats(branchName).then(res => {
-    let data = res.data;
-    console.log("response : ", data);
-    branch = data.docs;
-    console.log("branch list :", branch);
-}).catch(err => {
-    alert("List Failed");
-});
-*/
-
-function updateAvailableSeats(id, availableSeats) {
-    const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
-    const dbPassword = "163671d490ddeef138fc61e470881715";
-    const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
-    let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/adddepartments/" + id;
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
-        const branchValue = res.data;
-        branchValue.availableSeats = availableSeats
-
-    })
-}
-
 
 function displayBranch() {
     const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
