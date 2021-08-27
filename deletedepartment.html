@@ -11,7 +11,7 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/serviceLayer.js"></script>
-    <script src="assets/js/displaydepartment.js"></script>
+    <script src="assets/js/deletedepartment.js"></script>
 </head>
 
 <body>
@@ -19,14 +19,14 @@
     <main>
         <div class="branch">
             <h2>Available-Branches</h2>
-            <table border="1">
+            <table border="1" aria-describedby="mydesc">
                 <thead>
                     <tr>
                         <th id="searchBar">Degree</th>
                         <th id="searchBar">Branch</th>
                         <th id="searchBar">Total No of Seats</th>
                         <th id="searchBar">Availabe Seats</th>
-                        <th id="searchBar">Apply</th>
+                        <th id="searchBar">Action</th>
                     </tr>
                 </thead>
                 <tbody id="programme"></tbody>

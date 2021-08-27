@@ -30,7 +30,7 @@ function displayTasks(tableData) {
                 </td><td>${taskObj.doc.percentage}</td><td>${taskObj.doc.district}</td><td>${taskObj.doc.email}</td>
                 <td>${taskObj.doc.status}</td><td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED','${taskObj.doc.branch}')">Accept
                 </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED','${taskObj.doc.branch}')">Reject</button></td>
-                <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</td></tr>`;
+                <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</button></td></tr>`;
         document.querySelector("#applicationTable").innerHTML = content;
     }
 }
