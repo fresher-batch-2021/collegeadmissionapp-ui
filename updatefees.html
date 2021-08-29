@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+
+        label {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .updateFees {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            margin-top: 6%;
+            border: 1px solid;
+            padding: 10px;
+            margin-left: 35%;
+            margin-right: 35%;
+            box-sizing: border-box;
+        }
+
+        input {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: #ccc;
+            text-align: center;
+            margin-left: 180px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="updateFees">
+        <form>
+            <h1>Update-Fees</h1>
+            <label>Admission Fees</label>
+            <input type="number" id="admissionFees">
+            <br>
+            <label>Tution-Fees</label>
+            <input type="number" id="tutionFees">
+            <br>
+            <label>Exam-Fees</label>
+            <input type="number" id="examFees">
+            <br>
+            <label>Hostel-Fees</label>
+            <input type="number" id="hostelFees">
+            <br>
+            <div id="btn"></div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/updatefees.js"></script>
+</body>
+
+</html>

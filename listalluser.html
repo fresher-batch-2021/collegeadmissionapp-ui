@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListAllUser</title>
+    <link rel="stylesheet" href="assets/css/listalluser.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="userList">
+        <h1>User-List</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th id="userList">Regeister-ID</th>
+                    <th id="userList">Candidate-Name</th>
+                    <th id="userList">Email-Id</th>
+                    <th id="userList">Contact-Number</th>
+                    <th id="userList">DOB</th>
+                </tr>
+            </thead>
+            <tbody id="userListTable"></tbody>
+        </table>
+    </div>
+    <script>
+        let userList = [];
+        function listAllUser() {
+            const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+            const dbPassword = "163671d490ddeef138fc61e470881715";
+            const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+            let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/collegeadmissionapp_user/_all_docs?include_docs=true";
+            axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+                let data = res.data;
+                console.log("response : ", data);
+                userList = data.rows;
+                console.log("table list :", userList);
+                displayTable(userList);
+            }).catch(err => {
+                let errorMessage = err.response.data.errorMessage;
+                console.error(errorMessage);
+                console.log("failed");
+                alert("Error-" + errorMessage);
+            });
+        }
+        function displayTable(userList) {
+            let content = "";
+            for (let userObj of userList) {
+                content =
+                    content +
+                    `<tr><td>${userObj.doc._id}</td>
+            <td>${userObj.doc.name}</td>
+            <td>${userObj.doc.email}</td>
+            <td>${userObj.doc.contactNo}</td>
+            <td>${userObj.doc.dob}</td>
+            </tr>`;
+                document.querySelector("#userListTable").innerHTML = content;
+            }
+        }
+        listAllUser();
+    </script>
+</body>
+
+</html>

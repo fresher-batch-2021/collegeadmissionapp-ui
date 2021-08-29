@@ -1,4 +1,5 @@
 class UserService {
+
     static login(userName, password) {
         const selectedData = {
             selector: {
@@ -69,6 +70,14 @@ class UserService {
         }
         let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/adddepartments/_find";
         return (axios.post(url, availableSeatsValue, { headers: { 'Authorization': basicAuth } }));
+    }
+
+    static update(id, rev, updateFeesObj) {
+        const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+        const dbPassword = "163671d490ddeef138fc61e470881715";
+        const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+        let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/addfees/";
+        return axios.put(url + id + "?rev=" + rev, updateFeesObj, { headers: { 'Authorization': basicAuth } })
     }
 
 }

@@ -46,7 +46,7 @@ function updateStatus(id, status, branch) {
             selector: {
                 branch: branch
             },
-            fields: ["_id", "_rev", "degree", "branch", "totalSeats", "availableSeats"]
+            fields: ["_id", "_rev", "degree", "branch", "totalSeats", "availableSeats", "appliedSeats"]
         };
         let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/adddepartments/_find";
         axios.post(url, requestData, { headers: { 'Authorization': basicAuth } }).then(res => {
@@ -54,6 +54,10 @@ function updateStatus(id, status, branch) {
             update_seats(data);
         })
     }
+
+
+
+
     console.log('Update ' + id + ',status=' + status);
 
     //get by id
@@ -81,7 +85,6 @@ function updateStatus(id, status, branch) {
     });
 }
 function deleteFun(id, revId) {
-    alert("Function Works")
     console.log('Delete' + id + " " + revId);
 
     const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
@@ -121,8 +124,10 @@ function update_seats(data) {
         'degree': data.degree,
         'branch': data.branch,
         'availableSeats': parseInt(data.availableSeats) - 1,
-        'totalSeats': data.totalSeats
+        'totalSeats': data.totalSeats,
+        "appliedSeats": parseInt(data.appliedSeats) + 1
     }
+    console.log(updateData);
     const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
     const dbPassword = "163671d490ddeef138fc61e470881715";
     const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
@@ -135,5 +140,6 @@ function update_seats(data) {
         alert("failed to update");
     })
 }
+
 
 

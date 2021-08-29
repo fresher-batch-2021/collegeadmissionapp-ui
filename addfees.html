@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+
+        label {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .feesDetails {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            margin-top: 6%;
+            border: 1px solid;
+            padding: 10px;
+            margin-left: 35%;
+            margin-right: 35%;
+            box-sizing: border-box;
+        }
+
+        input {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: #ccc;
+            text-align: center;
+            margin-left: 85px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="feesDetails">
+        <form onsubmit="addFees()">
+            <h1>Fees-Structure</h1>
+            <label>Admission Fees</label>
+            <input type="number" placeholder="Enter Admission Fees" id="admissionFees" required autocomplete="off"
+                autofocus pattern="[0-9]{6}">
+            <br>
+            <label>Tution Fees(Per-Semester)</label>
+            <input type="number" placeholder="Enter Tution Fees" id="tutionFees" required autocomplete="off"
+                pattern="[0-9]{6}">
+            <br>
+            <label>Exam-Fees(Per-Paper)</label>
+            <input type="number" placeholder="Enter Exam Fees" id="examFees" required autocomplete="off"
+                pattern="[0-9]{6}">
+            <br>
+            <label>Hostel-Fees(Per-Semester)</label>
+            <input type="number" placeholder="Enter Fees" id="hostelFees" required autocomplete="off"
+                pattern="[0-9]{6}">
+
+            <a href="index.html"><button type="button">BACK</button></a>
+            <button type="submit">SUBMIT</button>
+
+        </form>
+
+    </div>
+    <script>
+        function addFees() {
+            event.preventDefault();
+            const admissionFees = document.querySelector("#admissionFees").value;
+            const tutionFees = document.querySelector("#tutionFees").value;
+            const examFees = document.querySelector("#examFees").value;
+            const hostelFees = document.querySelector("#hostelFees").value;
+
+            if (admissionFees == null || admissionFees == "") {
+                alert("Admission fees cannot be blank");
+                return false;
+            } else if (tutionFees == null || tutionFees == "") {
+                alert("Tution Fees cannot be blank");
+                return false;
+            } else if (examFees == null || examFees == "") {
+                alert("Exam Fees cannot be blank");
+                return false;
+            } else if (hostelFees == "" || hostelFees == "") {
+                alert("Hostel Fees cannot be blank");
+                return false;
+            } else {
+                alert("Function Works");
+                let feesObj = {
+                    admissionFees: admissionFees,
+                    tutionFees: tutionFees,
+                    examFees: examFees,
+                    hostelFees: hostelFees
+                }
+                console.log(feesObj);
+                const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
+                const dbPassword = "163671d490ddeef138fc61e470881715";
+                const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+                let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/addfees";
+                axios.post(url, feesObj, { headers: { 'Authorization': basicAuth } }).then(res => {
+                    let data = res.data;
+                    console.log(data);
+                    localStorage.setItem('feesObj', JSON.stringify(feesObj));
+                    alert("Fees Added Successfully");
+                }).catch(err => {
+                    alert(err.message);
+                    alert("Unable to add Fees");
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

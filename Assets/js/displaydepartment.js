@@ -27,6 +27,7 @@ function displayTable(branch) {
             <td>${branchObj.doc.branch}</td>
             <td>${branchObj.doc.totalSeats}</td>
             <td>${branchObj.doc.availableSeats}</td>
+            <td>${branchObj.doc.appliedSeats}</td>
             <td><button type='button' onclick="applyFunction()">Click to Apply</button></tr>`;
         document.querySelector("#programme").innerHTML = content;
     }

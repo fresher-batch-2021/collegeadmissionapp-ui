@@ -13,7 +13,8 @@ function addDepartment() {
             degree: degree,
             branch: branch,
             totalSeats: totalSeats,
-            availableSeats: availableSeats
+            availableSeats: availableSeats,
+            appliedSeats: "0"
         }
         console.log(departmentData);
         const dbUserName = "apikey-v2-v1zh0zplguvn1ukyhpnqwpt7rhiuokz1bqggmlt9kw4";
