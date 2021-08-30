@@ -22,7 +22,8 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
     .catch(err => console.error(err))
 
 function updateFees(id, rev) {
-    alert("hi");
+    event.preventDefault();
+    //alert("hi");
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
@@ -36,7 +37,7 @@ function updateFees(id, rev) {
     let examFeesValue = document.querySelector("#examFees").value;
     let hostelFeesValue = document.querySelector("#hostelFees").value;
 
-    alert("hiiiiii");
+    // alert("hiiiiii");
     let updateFeesObj = {
         "admissionFees": admissionFeesValue,
         "tutionFees": tutionFeesValue,
@@ -45,7 +46,7 @@ function updateFees(id, rev) {
     }
     console.log("Obj", updateFeesObj);
     alert("sucess");
-    UserService.update(id,rev,updateFeesObj).then(res => {
+    UserService.update(id, rev, updateFeesObj).then(res => {
         console.log(res.data);
         alert("successfull");
         window.location.href = "listfees.html";

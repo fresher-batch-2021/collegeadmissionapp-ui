@@ -77,7 +77,7 @@ class UserService {
         const dbPassword = "163671d490ddeef138fc61e470881715";
         const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
         let url = "https://21781b11-9dff-4242-9efa-fb21396540ca-bluemix.cloudantnosqldb.appdomain.cloud/addfees/";
-        return axios.put(url + id + "?rev=" + rev, updateFeesObj, { headers: { 'Authorization': basicAuth } })
+        return axios.put(url+id+"?rev="+rev, updateFeesObj, { headers: { 'Authorization': basicAuth } })
     }
 
 }
